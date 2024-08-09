@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>3d打印机 - 分类 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/categories/3d%E6%89%93%E5%8D%B0%E6%9C%BA/</link>
+        <description>3d打印机 - 分类 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Mon, 01 Apr 2024 15:17:01 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/categories/3d%E6%89%93%E5%8D%B0%E6%9C%BA/" rel="self" type="application/rss+xml" /><item>
+    <title>Klipper安装0.96OLED屏幕</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/klipper%E5%AE%89%E8%A3%850.96oled%E5%B1%8F%E5%B9%95/</link>
+    <pubDate>Mon, 01 Apr 2024 15:17:01 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/klipper%E5%AE%89%E8%A3%850.96oled%E5%B1%8F%E5%B9%95/</guid>
+    <description><![CDATA[前言 摘要 新组装的打印机可以通过局域网内浏览器进行控制打印， 但还是需要一块小屏幕展示打印进度，才不用每次都打开手机或者电脑才能查看。 之前用mk]]></description>
+</item>
+<item>
+    <title>Klipper配置网床补偿实现完美首层打印</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/klipper%E9%85%8D%E7%BD%AE%E7%BD%91%E5%BA%8A%E8%A1%A5%E5%81%BF%E5%AE%9E%E7%8E%B0%E5%AE%8C%E7%BE%8E%E9%A6%96%E5%B1%82%E6%89%93%E5%8D%B0/</link>
+    <pubDate>Thu, 28 Mar 2024 17:43:39 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/klipper%E9%85%8D%E7%BD%AE%E7%BD%91%E5%BA%8A%E8%A1%A5%E5%81%BF%E5%AE%9E%E7%8E%B0%E5%AE%8C%E7%BE%8E%E9%A6%96%E5%B1%82%E6%89%93%E5%8D%B0/</guid>
+    <description><![CDATA[参考链接 引用 本文主要针对没有配置自动调平工具的3d打印机，配置网床补偿以达到完美打印首层的目的 https://www.bilibili.com/video/BV1ao4y1j7uy 参考视频来自B站up主： 三十而肥2017 操作]]></description>
+</item>
+<item>
+    <title>创想三维ender刷klipper下位机</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/</link>
+    <pubDate>Wed, 27 Mar 2024 20:55:11 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/</guid>
+    <description><![CDATA[参考链接 引用 本文主要针对创想三维的ender3-v2-2020机型，主板型号4.4.2，主控GD32F303 其他ender3的型号可以参照以]]></description>
+</item>
+</channel>
+</rss>

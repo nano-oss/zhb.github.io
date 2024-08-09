@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Ubuntu记录 - 标签 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/tags/ubuntu%E8%AE%B0%E5%BD%95/</link>
+        <description>Ubuntu记录 - 标签 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Wed, 22 Nov 2023 13:44:50 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/tags/ubuntu%E8%AE%B0%E5%BD%95/" rel="self" type="application/rss+xml" /><item>
+    <title>ubuntu操作记录</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/ubuntu%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
+    <pubDate>Wed, 22 Nov 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/ubuntu%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
+    <description><![CDATA[问题及解决 修改/etc/sudoers文件发现显示/etc/sudoers is meant to be readonly的警告： 使用visudo指令修改： 1 sudo visudo v]]></description>
+</item>
+</channel>
+</rss>

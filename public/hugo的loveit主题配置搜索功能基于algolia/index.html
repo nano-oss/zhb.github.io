@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Hugo的Loveit主题配置搜索功能(基于algolia) - Bin&#39;s Blog</title><meta name="Description" content="路漫漫其修远兮，吾将上下而求索！"><meta property="og:title" content="Hugo的Loveit主题配置搜索功能(基于algolia)" />
+<meta property="og:description" content="参考链接 引用 1. https://blog.csdn.net/m0_43457463/article/details/125708065# 2. https://github.com/algolia/cli?tab=readme-ov-file 3. https://www.algolia.com/doc/tools/cli/get-started/overview/ 4. https://zhuanlan.zhihu.com/p/642649638 5. https://hugoloveit.com/zh-cn/theme-documentation-basics/#5-%E6%90%9C%E7%B4%A2 6. https://hugoloveit.com/zh-cn/posts/ 操作步骤 将hugo.toml文件中配置为如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 [params.search] enable = true # 搜索引擎" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://naonano.gitee.io/zhb.gitee.io/hugo%E7%9A%84loveit%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%9F%BA%E4%BA%8Ealgolia/" /><meta property="og:image" content="https://naonano.gitee.io/zhb.gitee.io/img/header.jpg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-22T13:44:50+08:00" />
+<meta property="article:modified_time" content="2024-03-02T20:00:20+08:00" /><meta property="og:site_name" content="Bin&#39;s Blog" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://naonano.gitee.io/zhb.gitee.io/img/header.jpg" /><meta name="twitter:title" content="Hugo的Loveit主题配置搜索功能(基于algolia)"/>
+<meta name="twitter:description" content="参考链接 引用 1. https://blog.csdn.net/m0_43457463/article/details/125708065# 2. https://github.com/algolia/cli?tab=readme-ov-file 3. https://www.algolia.com/doc/tools/cli/get-started/overview/ 4. https://zhuanlan.zhihu.com/p/642649638 5. https://hugoloveit.com/zh-cn/theme-documentation-basics/#5-%E6%90%9C%E7%B4%A2 6. https://hugoloveit.com/zh-cn/posts/ 操作步骤 将hugo.toml文件中配置为如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 [params.search] enable = true # 搜索引擎"/>
+<meta name="application-name" content="Bin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Bin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://naonano.gitee.io/zhb.gitee.io/hugo%E7%9A%84loveit%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%9F%BA%E4%BA%8Ealgolia/" /><link rel="prev" href="https://naonano.gitee.io/zhb.gitee.io/win10%E4%B8%8B%E6%89%B9%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/" /><link rel="next" href="https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%87%AA%E5%8A%A8%E6%8B%8D%E7%85%A7%E8%84%9A%E6%9C%AC/" /><link rel="stylesheet" href="/zhb.gitee.io/css/style.min.css"><link rel="preload" href="/zhb.gitee.io/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/zhb.gitee.io/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/zhb.gitee.io/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/zhb.gitee.io/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hugo的Loveit主题配置搜索功能(基于algolia)",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/naonano.gitee.io\/zhb.gitee.io\/hugo%E7%9A%84loveit%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%9F%BA%E4%BA%8Ealgolia\/"
+        },"genre": "posts","keywords": "博客美化","wordcount":  680 ,
+        "url": "https:\/\/naonano.gitee.io\/zhb.gitee.io\/hugo%E7%9A%84loveit%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%9F%BA%E4%BA%8Ealgolia\/","datePublished": "2024-02-22T13:44:50+08:00","dateModified": "2024-03-02T20:00:20+08:00","license": "本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Bin"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zhb.gitee.io/" title="Bin&#39;s Blog"><span class="header-title-pre"><i class="fa-solid fa-dragon" style="color: #744da9;"></i></span> Bin&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zhb.gitee.io/" title="首页"><i class="fa-solid fa-house" style="color: #744da9;"></i> 首页 </a><a class="menu-item" href="/zhb.gitee.io/posts/" title="全部文章"><i class="fa-solid fa-pen" style="color: #744da9;"></i> 全部文章-时间线 </a><a class="menu-item" href="/zhb.gitee.io/categories/" title="文章分类"><i class="fa-brands fa-typo3" style="color: #744da9;"></i> 文章分类 </a><a class="menu-item" href="/zhb.gitee.io/tags/" title="文章标签"><i class="fa-solid fa-tag" style="color: #744da9;"></i> 文章标签 </a><a class="menu-item" href="/zhb.gitee.io/download/" title="资源分享"><i class="fa-solid fa-share-nodes" style="color: #744da9;"></i> 资源分享 </a><a class="menu-item" href="/zhb.gitee.io/self/" title="个人简历"><i class="fa-solid fa-person-praying" style="color: #744da9;"></i> 个人简历 </a><a class="menu-item" href="/zhb.gitee.io/about/" title="关于"><i class="fa-solid fa-circle-info" style="color: #744da9;"></i> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="请输入关键词搜索" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zhb.gitee.io/" title="Bin&#39;s Blog"><span class="header-title-pre"><i class="fa-solid fa-dragon" style="color: #744da9;"></i></span> Bin&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="请输入关键词搜索" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zhb.gitee.io/" title="首页"><i class="fa-solid fa-house" style="color: #744da9;"></i>首页</a><a class="menu-item" href="/zhb.gitee.io/posts/" title="全部文章"><i class="fa-solid fa-pen" style="color: #744da9;"></i>全部文章-时间线</a><a class="menu-item" href="/zhb.gitee.io/categories/" title="文章分类"><i class="fa-brands fa-typo3" style="color: #744da9;"></i>文章分类</a><a class="menu-item" href="/zhb.gitee.io/tags/" title="文章标签"><i class="fa-solid fa-tag" style="color: #744da9;"></i>文章标签</a><a class="menu-item" href="/zhb.gitee.io/download/" title="资源分享"><i class="fa-solid fa-share-nodes" style="color: #744da9;"></i>资源分享</a><a class="menu-item" href="/zhb.gitee.io/self/" title="个人简历"><i class="fa-solid fa-person-praying" style="color: #744da9;"></i>个人简历</a><a class="menu-item" href="/zhb.gitee.io/about/" title="关于"><i class="fa-solid fa-circle-info" style="color: #744da9;"></i>关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Hugo的Loveit主题配置搜索功能(基于algolia)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zhb.gitee.io/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Bin</a></span>&nbsp;<span class="post-category">收录于 <a href="/zhb.gitee.io/categories/hugo/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Hugo</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-22">2024-02-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 680 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#参考链接">参考链接</a></li>
+            <li><a href="#操作步骤">操作步骤</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="参考链接">参考链接</h3>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw" aria-hidden="true"></i>引用<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre><code>1. https://blog.csdn.net/m0_43457463/article/details/125708065#
+2. https://github.com/algolia/cli?tab=readme-ov-file
+3. https://www.algolia.com/doc/tools/cli/get-started/overview/
+4. https://zhuanlan.zhihu.com/p/642649638
+5. https://hugoloveit.com/zh-cn/theme-documentation-basics/#5-%E6%90%9C%E7%B4%A2
+6. https://hugoloveit.com/zh-cn/posts/
+</code></pre>
+</div>
+        </div>
+    </div>
+<br>
+<h3 id="操作步骤">操作步骤</h3>
+<ol>
+<li>将hugo.toml文件中配置为如下：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    [params.search]
+</span></span><span class="line"><span class="cl">        enable = true
+</span></span><span class="line"><span class="cl">        # 搜索引擎的类型 [&#34;lunr&#34;, &#34;algolia&#34;]
+</span></span><span class="line"><span class="cl">        type = &#34;algolia&#34;
+</span></span><span class="line"><span class="cl">        # 文章内容最长索引长度
+</span></span><span class="line"><span class="cl">        contentLength = 4000
+</span></span><span class="line"><span class="cl">        # 搜索框的占位提示语
+</span></span><span class="line"><span class="cl">        placeholder = &#34;请输入关键词搜索&#34;
+</span></span><span class="line"><span class="cl">        # LoveIt 新增 | 0.2.1 最大结果数目
+</span></span><span class="line"><span class="cl">        maxResultLength = 12
+</span></span><span class="line"><span class="cl">        # LoveIt 新增 | 0.2.3 结果内容片段长度
+</span></span><span class="line"><span class="cl">        snippetLength = 100
+</span></span><span class="line"><span class="cl">        # LoveIt 新增 | 0.2.1 搜索结果中高亮部分的 HTML 标签
+</span></span><span class="line"><span class="cl">        highlightTag = &#34;em&#34;
+</span></span><span class="line"><span class="cl">        # LoveIt 新增 | 0.2.4 是否在搜索索引中使用基于 baseURL 的绝对路径
+</span></span><span class="line"><span class="cl">        absoluteURL = true
+</span></span><span class="line"><span class="cl">    [params.search.algolia]
+</span></span><span class="line"><span class="cl">        index = &#34;your index name define in algolia&#34;
+</span></span><span class="line"><span class="cl">        appID = &#34;your Application ID&#34;
+</span></span><span class="line"><span class="cl">        searchKey = &#34;your searchKey&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>参考链接1创建algolia账号并配置api
+将获取的api key等参数填入<code>hugo.toml</code>的<code>[params.search]</code>中,尝试运行看看搜索能否实现</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    hugo server --buildDrafts --disableFastRender
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>
+<p>下载algolia-cli自动脚本并安装，以便后期更新index.json(不会用，换成链接3的办法)</p>
+</li>
+<li>
+<p>参考链接4，cmd或powershell进入博客根目录，执行以下命令：</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm init   
+</span></span><span class="line"><span class="cl">npm install atomic-algolia --save
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在根目录下会有个package.json文件，打开编辑在scripts:{}中添加&quot;algolia&quot;: &ldquo;atomic-algolia&quot;如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;scripts&#34;: 
+</span></span><span class="line"><span class="cl">{   &#34;test&#34;: &#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;,
+</span></span><span class="line"><span class="cl">    &#34;algolia&#34;: &#34;atomic-algolia&#34;    
+</span></span><span class="line"><span class="cl">  }, 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>根目录下建立一个.env文件，文件内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ALGOLIA_APP_ID=Your Application ID   
+</span></span><span class="line"><span class="cl">ALGOLIA_INDEX_NAME=Your Index Name   
+</span></span><span class="line"><span class="cl">ALGOLIA_INDEX_FILE=public/index.json   
+</span></span><span class="line"><span class="cl">ALGOLIA_ADMIN_KEY=Your Admin API Key
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在 blog 项目根目录下执行下面的命令便可将索引文件自动上传至更新到algolia</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    npm run algolia
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在日后，我们每一次增添文章或修改文章后，都要再将索引文件上传以更新。一般来说，我们只要在 blog 项目根目录执行下面两行代码，便可以更新索引文件。
+使索引文件 index.json 在文件夹 public 中生成</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    hugo --buildDrafts
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>将索引文件上传</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    npm run algolia
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-03-02</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://naonano.gitee.io/zhb.gitee.io/hugo%E7%9A%84loveit%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%9F%BA%E4%BA%8Ealgolia/" data-title="Hugo的Loveit主题配置搜索功能(基于algolia)" data-hashtags="博客美化"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://naonano.gitee.io/zhb.gitee.io/hugo%E7%9A%84loveit%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%9F%BA%E4%BA%8Ealgolia/" data-hashtag="博客美化"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://naonano.gitee.io/zhb.gitee.io/hugo%E7%9A%84loveit%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%9F%BA%E4%BA%8Ealgolia/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://naonano.gitee.io/zhb.gitee.io/hugo%E7%9A%84loveit%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%9F%BA%E4%BA%8Ealgolia/" data-title="Hugo的Loveit主题配置搜索功能(基于algolia)"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://naonano.gitee.io/zhb.gitee.io/hugo%E7%9A%84loveit%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%9F%BA%E4%BA%8Ealgolia/" data-title="Hugo的Loveit主题配置搜索功能(基于algolia)" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://naonano.gitee.io/zhb.gitee.io/hugo%E7%9A%84loveit%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%9F%BA%E4%BA%8Ealgolia/" data-title="Hugo的Loveit主题配置搜索功能(基于algolia)"><i data-svg-src="/zhb.gitee.io/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zhb.gitee.io/tags/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/">博客美化</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zhb.gitee.io/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zhb.gitee.io/win10%E4%B8%8B%E6%89%B9%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/" class="prev" rel="prev" title="win10下批量修改文件后缀"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>win10下批量修改文件后缀</a>
+            <a href="/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%87%AA%E5%8A%A8%E6%8B%8D%E7%85%A7%E8%84%9A%E6%9C%AC/" class="next" rel="next" title="树莓命令行自动拍照脚本">树莓命令行自动拍照脚本<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by Bin | A Crazy Man</div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2000 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zhb.gitee.io/" target="_blank">BinByZhang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/zhb.gitee.io/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/zhb.gitee.io/lib/katex/katex.min.css"><script type="text/javascript" src="/zhb.gitee.io/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/katex.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOLVvab84CdYy9","darkTheme":"dark","emitMetadata":"0","inputPosition":"top","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"nano-oss/zhb.io","repoId":"R_kgDOLVvabw"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"7R13ZBU6BQ","algoliaIndex":"zhb.gitee.io","algoliaSearchKey":"abb3e8f6730db0b511261fc3a0f5e8d5","highlightTag":"em","maxResultLength":12,"noResultsFound":"没有找到结果","snippetLength":100,"type":"algolia"}};</script><script type="text/javascript" src="/zhb.gitee.io/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript" src="/js/custom.js"></script></body>
+</html>
+
+

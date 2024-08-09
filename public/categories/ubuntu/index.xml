@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Ubuntu - 分类 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/categories/ubuntu/</link>
+        <description>Ubuntu - 分类 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Mon, 25 Dec 2023 13:44:50 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/categories/ubuntu/" rel="self" type="application/rss+xml" /><item>
+    <title>ubuntu安装桌面、配置远程</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/ubuntu%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B/</link>
+    <pubDate>Mon, 25 Dec 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/ubuntu%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B/</guid>
+    <description><![CDATA[摘要 引用 ubuntu-server安装桌面： https://zhuanlan.zhihu.com/p/373773218 安装ubuntu-desktop中断之后重新安装报错: https://blog.csdn.net/u013832707/article/details/113104006 ubuntu远程配置桌面： https://blog.csdn.net/siri99999/article/details/110704597 操作步骤 u]]></description>
+</item>
+<item>
+    <title>ubuntu操作记录</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/ubuntu%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
+    <pubDate>Wed, 22 Nov 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/ubuntu%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
+    <description><![CDATA[问题及解决 修改/etc/sudoers文件发现显示/etc/sudoers is meant to be readonly的警告： 使用visudo指令修改： 1 sudo visudo v]]></description>
+</item>
+<item>
+    <title>ubuntu2004安装ros</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/ubuntu2004%E5%AE%89%E8%A3%85ros/</link>
+    <pubDate>Wed, 20 Sep 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/ubuntu2004%E5%AE%89%E8%A3%85ros/</guid>
+    <description><![CDATA[摘要 信息 ubuntu不同版本对应的ros版本： Ubuntu ROS1.0 ROS 2.0 16.04LTS Kinetic LTS Ardent 18.04LTS Melodic LTS Dashing LTS 20.04LTS Noetic LTS Foxy LTS 22.04LTS Noetic Ninjemys Humble Hawksbill 操作步骤 创建一个ros用户 1 2 3 4 5 6 sudo adduser ros （s]]></description>
+</item>
+</channel>
+</rss>

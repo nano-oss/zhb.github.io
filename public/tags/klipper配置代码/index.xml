@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>klipper配置代码 - 标签 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/tags/klipper%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%A0%81/</link>
+        <description>klipper配置代码 - 标签 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Sat, 02 Dec 2023 13:44:50 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/tags/klipper%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%A0%81/" rel="self" type="application/rss+xml" /><item>
+    <title>klipper暂停和恢复打印配置代码</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/pause_resume/</link>
+    <pubDate>Sat, 02 Dec 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/pause_resume/</guid>
+    <description><![CDATA[3D打印机暂停和恢复打印代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 [gcode_macro PAUSE] rename_existing: BASE_PAUSE gcode: {% set E = params.E|default(1.7)|float %} {% set x_park = printer.toolhead.axis_maximum.x|float - 5.0 %} {% set y_park = printer.toolhead.axis_maximum.y|float -]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Klipper安装指南 - Bin&#39;s Blog</title><meta name="Description" content="路漫漫其修远兮，吾将上下而求索！"><meta property="og:title" content="Klipper安装指南" />
+<meta property="og:description" content="参考链接 引用 香橙派镜像下载地址： http://www.orangepi.cn/html/hardWare/computerAndMicrocontrollers/service-and-support/Orange-Pi-Zero-2.html canbus-ebb刷机教程: https://www.bilibili.com/video/BV1tN4y1F7wo/?vd_source=83eaf6e4edc3987cb641faad4036a9f3 N1盒子安装Armbian系统教程： https://www.right.com.cn/forum/thread-510423-1-1.html https://post.smzdm.com/p/alpwnxmp/ 安装klipper 1 2 3 4 5 6 7 8" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://naonano.gitee.io/zhb.gitee.io/klipper_install/" /><meta property="og:image" content="https://naonano.gitee.io/zhb.gitee.io/img/header.jpg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-05-05T13:44:50+08:00" />
+<meta property="article:modified_time" content="2024-03-02T20:00:20+08:00" /><meta property="og:site_name" content="Bin&#39;s Blog" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://naonano.gitee.io/zhb.gitee.io/img/header.jpg" /><meta name="twitter:title" content="Klipper安装指南"/>
+<meta name="twitter:description" content="参考链接 引用 香橙派镜像下载地址： http://www.orangepi.cn/html/hardWare/computerAndMicrocontrollers/service-and-support/Orange-Pi-Zero-2.html canbus-ebb刷机教程: https://www.bilibili.com/video/BV1tN4y1F7wo/?vd_source=83eaf6e4edc3987cb641faad4036a9f3 N1盒子安装Armbian系统教程： https://www.right.com.cn/forum/thread-510423-1-1.html https://post.smzdm.com/p/alpwnxmp/ 安装klipper 1 2 3 4 5 6 7 8"/>
+<meta name="application-name" content="Bin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Bin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://naonano.gitee.io/zhb.gitee.io/klipper_install/" /><link rel="prev" href="https://naonano.gitee.io/zhb.gitee.io/%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85samba%E6%90%AD%E5%BB%BA/" /><link rel="next" href="https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%972-cm4%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F/" /><link rel="stylesheet" href="/zhb.gitee.io/css/style.min.css"><link rel="preload" href="/zhb.gitee.io/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/zhb.gitee.io/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/zhb.gitee.io/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/zhb.gitee.io/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Klipper安装指南",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/naonano.gitee.io\/zhb.gitee.io\/klipper_install\/"
+        },"genre": "posts","keywords": "Klipper安装","wordcount":  1526 ,
+        "url": "https:\/\/naonano.gitee.io\/zhb.gitee.io\/klipper_install\/","datePublished": "2023-05-05T13:44:50+08:00","dateModified": "2024-03-02T20:00:20+08:00","license": "本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Bin"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zhb.gitee.io/" title="Bin&#39;s Blog"><span class="header-title-pre"><i class="fa-solid fa-dragon" style="color: #744da9;"></i></span> Bin&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zhb.gitee.io/" title="首页"><i class="fa-solid fa-house" style="color: #744da9;"></i> 首页 </a><a class="menu-item" href="/zhb.gitee.io/posts/" title="全部文章"><i class="fa-solid fa-pen" style="color: #744da9;"></i> 全部文章-时间线 </a><a class="menu-item" href="/zhb.gitee.io/categories/" title="文章分类"><i class="fa-brands fa-typo3" style="color: #744da9;"></i> 文章分类 </a><a class="menu-item" href="/zhb.gitee.io/tags/" title="文章标签"><i class="fa-solid fa-tag" style="color: #744da9;"></i> 文章标签 </a><a class="menu-item" href="/zhb.gitee.io/download/" title="资源分享"><i class="fa-solid fa-share-nodes" style="color: #744da9;"></i> 资源分享 </a><a class="menu-item" href="/zhb.gitee.io/self/" title="个人简历"><i class="fa-solid fa-person-praying" style="color: #744da9;"></i> 个人简历 </a><a class="menu-item" href="/zhb.gitee.io/about/" title="关于"><i class="fa-solid fa-circle-info" style="color: #744da9;"></i> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="请输入关键词搜索" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zhb.gitee.io/" title="Bin&#39;s Blog"><span class="header-title-pre"><i class="fa-solid fa-dragon" style="color: #744da9;"></i></span> Bin&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="请输入关键词搜索" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zhb.gitee.io/" title="首页"><i class="fa-solid fa-house" style="color: #744da9;"></i>首页</a><a class="menu-item" href="/zhb.gitee.io/posts/" title="全部文章"><i class="fa-solid fa-pen" style="color: #744da9;"></i>全部文章-时间线</a><a class="menu-item" href="/zhb.gitee.io/categories/" title="文章分类"><i class="fa-brands fa-typo3" style="color: #744da9;"></i>文章分类</a><a class="menu-item" href="/zhb.gitee.io/tags/" title="文章标签"><i class="fa-solid fa-tag" style="color: #744da9;"></i>文章标签</a><a class="menu-item" href="/zhb.gitee.io/download/" title="资源分享"><i class="fa-solid fa-share-nodes" style="color: #744da9;"></i>资源分享</a><a class="menu-item" href="/zhb.gitee.io/self/" title="个人简历"><i class="fa-solid fa-person-praying" style="color: #744da9;"></i>个人简历</a><a class="menu-item" href="/zhb.gitee.io/about/" title="关于"><i class="fa-solid fa-circle-info" style="color: #744da9;"></i>关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Klipper安装指南</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zhb.gitee.io/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Bin</a></span>&nbsp;<span class="post-category">收录于 <a href="/zhb.gitee.io/categories/klipper/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Klipper</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-05-05">2023-05-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1526 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#参考链接">参考链接</a></li>
+            <li><a href="#安装klipper">安装klipper</a></li>
+            <li><a href="#常用操作">常用操作</a></li>
+            <li><a href="#3d打印机常用操作">3D打印机常用操作</a></li>
+            <li><a href="#armbian安装python38">armbian安装python3.8</a></li>
+            <li><a href="#3d打印机问题记录">3D打印机问题记录</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="参考链接">参考链接</h3>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw" aria-hidden="true"></i>引用<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre><code>香橙派镜像下载地址：
+http://www.orangepi.cn/html/hardWare/computerAndMicrocontrollers/service-and-support/Orange-Pi-Zero-2.html
+
+canbus-ebb刷机教程:
+https://www.bilibili.com/video/BV1tN4y1F7wo/?vd_source=83eaf6e4edc3987cb641faad4036a9f3
+
+N1盒子安装Armbian系统教程：
+https://www.right.com.cn/forum/thread-510423-1-1.html
+https://post.smzdm.com/p/alpwnxmp/
+</code></pre>
+</div>
+        </div>
+    </div>
+<br>
+<h3 id="安装klipper">安装klipper</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo adduser klipper
+</span></span><span class="line"><span class="cl">（sudo userdel -r username）
+</span></span><span class="line"><span class="cl">sudo usermod -a -G adm klipper
+</span></span><span class="line"><span class="cl">sudo usermod -a -G sudo klipper
+</span></span><span class="line"><span class="cl">sudo gpasswd --add klipper dialout
+</span></span><span class="line"><span class="cl">su - klipper
+</span></span><span class="line"><span class="cl">sudo apt install git tree gcc g++ make cmake
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git clone https://github.com/th33xitus/kiauh.git
+</span></span><span class="line"><span class="cl">或
+</span></span><span class="line"><span class="cl">git clone https://gitee.com/miroky/kiauh.git(速度快)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">安装摄像头失败的话可以用以下脚本安装：
+</span></span><span class="line"><span class="cl">bash &lt;(curl -fsSL http://klipper.7130404.xyz:8001/add_webcam.sh)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<h3 id="常用操作">常用操作</h3>
+<p>换shell：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cat /etc/shells
+</span></span><span class="line"><span class="cl">sudo usermod -s /bin/bash username
+</span></span><span class="line"><span class="cl">或chsh -s /bin/bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查看端口</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ls /dev/serial/by-id/*
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>换源, 在以下链接选择自己的系统版本替换进<code>/etc/apt/sources.list</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://mirrors.tuna.tsinghua.edu.cn/help/debian/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>连接wifi</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">net</span><span class="o">-</span><span class="n">tools</span> 
+</span></span><span class="line"><span class="cl"><span class="n">nmtui</span><span class="o">-</span><span class="n">connect</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>更改python默认版本指向</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修复apt安装依赖破碎：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt --fix-broken install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<h3 id="3d打印机常用操作">3D打印机常用操作</h3>
+<p>PID校准</p>
+<p>热床：heat_bed</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">TURN_OFF_HEATERS 
+</span></span><span class="line"><span class="cl">PID_CALIBRATE HEATER=heater_bed TARGET=60 
+</span></span><span class="line"><span class="cl">SAVE_CONFIG
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>喷嘴：extruder</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">TURN_OFF_HEATERS 
+</span></span><span class="line"><span class="cl">PID_CALIBRATE HEATER=extruder TARGET=200 
+</span></span><span class="line"><span class="cl">SAVE_CONFIG
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>klipper显示mcu+主板温度：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[temperature_sensor server_temp]
+</span></span><span class="line"><span class="cl">sensor_type: temperature_host
+</span></span><span class="line"><span class="cl">min_temp: 0
+</span></span><span class="line"><span class="cl">max_temp: 100
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[temperature_sensor mcu_temp]
+</span></span><span class="line"><span class="cl">sensor_type: temperature_mcu
+</span></span><span class="line"><span class="cl">min_temp: 0
+</span></span><span class="line"><span class="cl">max_temp: 100
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<h3 id="armbian安装python38">armbian安装python3.8</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
+</span></span><span class="line"><span class="cl">sudo wget https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz
+</span></span><span class="line"><span class="cl">sudo tar -zxvf Python-3.8.5.tgz
+</span></span><span class="line"><span class="cl">cd Python-3.8.5
+</span></span><span class="line"><span class="cl">sudo ./configure --prefix=/usr/local/python3 &amp;&amp; make &amp;&amp; make install
+</span></span><span class="line"><span class="cl">sudo ln -s /usr/local/python3/bin/python3 /usr/local/bin/python3
+</span></span><span class="line"><span class="cl">sudo ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<h3 id="3d打印机问题记录">3D打印机问题记录</h3>
+<p>问题：</p>
+<ol>
+<li>无法识别到mcu串口(查找过后发现是串口权限问题，klipper用户一直无法打开串口)
+将查看串口是否映射到了其他串口，检查该串口是否有权限读写</li>
+</ol>
+<ul>
+<li>使用<code>chmod 777 ttyACM0</code>和<code>chmod 777 /dev/serial/by-id/*</code>提升权限即可解决</li>
+<li>针对有些系统重启之后恢复权限的缺陷，完美解决方法：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo nano /etc/rc.local    #写入以下内容
+</span></span><span class="line"><span class="cl">sudo chown klipper /dev/tty*
+</span></span><span class="line"><span class="cl">sudo chgrp klipper /dev/tty*
+</span></span><span class="line"><span class="cl">sudo chmod 777 /dev/tty*
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>保存退出，输入sync同步一下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo reboot    #重启系统查看是否正常
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>无法使用摄像头：
+进入<code>/kiauh/</code>
+的<code>mjpg-streamer</code>目录下，尝试运行<code>start.sh</code>，如果出错，需要修改其中的显示语句，
+并将脚本按照以下步骤写入开机启动文件：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo nano /etc/rc.local
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>写入以下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /home/orangepi/mjpg-streamer
+</span></span><span class="line"><span class="cl">./start.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>无法导入配置文件的错误：<code>internal server err</code>
+一般是moonraker出了问题，数据库混乱或没有权限(常见)</li>
+</ol>
+<blockquote>
+<p>解决：删除.moonraker_database或者重装之后登录网页在通知里输入密码即可</p>
+</blockquote>
+<ol start="4">
+<li>BLtouch自动调平</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[bltouch]
+</span></span><span class="line"><span class="cl">sensor_pin: ^PD2
+</span></span><span class="line"><span class="cl">control_pin: 
+</span></span><span class="line"><span class="cl">z_offset:
+</span></span><span class="line"><span class="cl">x_offset: 
+</span></span><span class="line"><span class="cl">y_offset:
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>去除耗材残留，冷却到室温，先正常用纸调平
+修改z轴<code>position_min: -1</code>
+找一张10*10cm的纸，在中间点一个点，打印机x,y归位
+移动挤出头的指针到点的位置，记录坐标，再移动3dtouch到点的位置，在打印机控制面板查看x/y的偏移,用现在的位置减去之前的位置(移动挤出头的指针到点的位置),填入x_offset/y_offset
+先把Z_offset:1，复位打印机，之后探针会反复弹起，<br>
+测试正常工作：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">BLTOUCH_DEBUG COMMAND=pin_down
+</span></span><span class="line"><span class="cl">BLTOUCH_DEBUG COMMAND=pin_up
+</span></span><span class="line"><span class="cl">BLTOUCH_DEBUG COMMAND=pin_down
+</span></span><span class="line"><span class="cl">BLTOUCH_DEBUG COMMAND=touch_mode
+</span></span><span class="line"><span class="cl">QUERY_PROBE
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>手指触摸BLTOUCH看是否缩回
+<code>QUERY_PROBE</code>查看是否触发</p>
+<p>移动z轴远离热床
+输入<code>PROBE_CALIBRATE</code>,探针弹出，z轴向下移动，然后触碰探针缩回，z轴停止，说明正常</p>
+<ol start="5">
+<li>问题：安装klipper时出现错误<code>Creation of Klipper virtualenv failed!</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">apt</span> <span class="n">remove</span> <span class="n">virtualenv</span> <span class="n">python</span><span class="o">-</span><span class="n">virtualenv</span> <span class="n">python3</span><span class="o">-</span><span class="n">virtualenv</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">pip</span> <span class="n">uninstall</span> <span class="n">virtualenv</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">setuptools</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">virtualenv</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">virtualenv</span> <span class="n">python</span><span class="o">-</span><span class="n">virtualenv</span> <span class="n">python3</span><span class="o">-</span><span class="n">virtualenv</span>
+</span></span><span class="line"><span class="cl"><span class="n">virtualenv</span> <span class="o">--</span><span class="n">download</span> <span class="o">-</span><span class="n">p</span> <span class="n">python3</span> <span class="o">~/</span><span class="n">klippy</span><span class="o">-</span><span class="n">env</span><span class="o">/</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>之后重新运行kiauh脚本即可</p>
+<ol start="6">
+<li>问题：安装klipper时出现错误<code>Creation of Moonraker virtualenv failed！</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">apt</span> <span class="n">remove</span> <span class="n">virtualenv</span> <span class="n">python</span><span class="o">-</span><span class="n">virtualenv</span> <span class="n">python3</span><span class="o">-</span><span class="n">virtualenv</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">pip</span> <span class="n">uninstall</span> <span class="n">virtualenv</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">setuptools</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">virtualenv</span>
+</span></span><span class="line"><span class="cl"><span class="n">virtualenv</span> <span class="o">--</span><span class="n">download</span> <span class="o">-</span><span class="n">p</span> <span class="n">python3</span> <span class="o">~/</span><span class="n">moonraker</span><span class="o">-</span><span class="n">env</span><span class="o">/</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>安装klipper的moonraker时出现<code>The headers or library files could not be found for jpeg</code>或<code>The headers or library files could not be found for zlib</code>问题，导致无法安装pillow
+参考以下链接：</li>
+</ol>
+<blockquote>
+<p><a href="https://pillow.readthedocs.io/en/latest/installation.html" target="_blank" rel="noopener noreffer ">https://pillow.readthedocs.io/en/latest/installation.html</a> <br>
+<a href="https://blog.csdn.net/lailaiquququ11/article/details/82904575" target="_blank" rel="noopener noreffer ">https://blog.csdn.net/lailaiquququ11/article/details/82904575</a></p>
+</blockquote>
+<p>解决方法：手动安装即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">su - root
+</span></span><span class="line"><span class="cl">wget http://www.zlib.net/zlib-1.3.tar.gz
+</span></span><span class="line"><span class="cl">wget http://ijg.org/files/jpegsrc.v9e.tar.gz
+</span></span><span class="line"><span class="cl">tar -zxvf zlib-1.3.tar.gz
+</span></span><span class="line"><span class="cl">tar -zxvf jpegsrc.v9e.tar.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>进入源码目录之后分别编译安装即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">./configure
+</span></span><span class="line"><span class="cl">make
+</span></span><span class="line"><span class="cl">make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="8">
+<li>pip换源</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">python -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
+</span></span><span class="line"><span class="cl">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+</span></span><span class="line"><span class="cl">或
+</span></span><span class="line"><span class="cl">pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-03-02</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://naonano.gitee.io/zhb.gitee.io/klipper_install/" data-title="Klipper安装指南" data-hashtags="Klipper安装"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://naonano.gitee.io/zhb.gitee.io/klipper_install/" data-hashtag="Klipper安装"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://naonano.gitee.io/zhb.gitee.io/klipper_install/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://naonano.gitee.io/zhb.gitee.io/klipper_install/" data-title="Klipper安装指南"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://naonano.gitee.io/zhb.gitee.io/klipper_install/" data-title="Klipper安装指南" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://naonano.gitee.io/zhb.gitee.io/klipper_install/" data-title="Klipper安装指南"><i data-svg-src="/zhb.gitee.io/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zhb.gitee.io/tags/klipper%E5%AE%89%E8%A3%85/">Klipper安装</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zhb.gitee.io/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zhb.gitee.io/%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85samba%E6%90%AD%E5%BB%BA/" class="prev" rel="prev" title="局域网内samba搭建"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>局域网内samba搭建</a>
+            <a href="/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%972-cm4%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F/" class="next" rel="next" title="树莓派操作指南2-CM4安装系统">树莓派操作指南2-CM4安装系统<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by Bin | A Crazy Man</div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2000 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zhb.gitee.io/" target="_blank">BinByZhang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/zhb.gitee.io/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/zhb.gitee.io/lib/katex/katex.min.css"><script type="text/javascript" src="/zhb.gitee.io/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/katex.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOLVvab84CdYy9","darkTheme":"dark","emitMetadata":"0","inputPosition":"top","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"nano-oss/zhb.io","repoId":"R_kgDOLVvabw"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"7R13ZBU6BQ","algoliaIndex":"zhb.gitee.io","algoliaSearchKey":"abb3e8f6730db0b511261fc3a0f5e8d5","highlightTag":"em","maxResultLength":12,"noResultsFound":"没有找到结果","snippetLength":100,"type":"algolia"}};</script><script type="text/javascript" src="/zhb.gitee.io/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript" src="/js/custom.js"></script></body>
+</html>
+
+

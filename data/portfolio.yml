@@ -1,0 +1,18 @@
+portfolioitems:
+  # portfolio category
+  - title: Coding Projects
+    # items within a category
+    portfolioitem:
+      - name: 测试分组
+        image: '/images/portfolio/header.jpg'
+        link: https://naonano.gitee.io/zhb.gitee.io/
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        tags:
+          - 嵌入式
+          - Linux
+        status: 'Finished'
+        start: '2020'
+        end: '2024'
+        authors:
+          - Bin
+          

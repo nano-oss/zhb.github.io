@@ -1,0 +1,88 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Linux - 分类 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/categories/linux/</link>
+        <description>Linux - 分类 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Fri, 01 Mar 2024 15:58:26 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/categories/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>树莓派fswebcam命令行控制usb摄像头拍照</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BEfswebcam%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6usb%E6%91%84%E5%83%8F%E5%A4%B4%E6%8B%8D%E7%85%A7/</link>
+    <pubDate>Fri, 01 Mar 2024 15:58:26 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BEfswebcam%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6usb%E6%91%84%E5%83%8F%E5%A4%B4%E6%8B%8D%E7%85%A7/</guid>
+    <description><![CDATA[参考链接 引用 https://blog.csdn.net/weixin_42361175/article/details/117011888# 操作步骤 1 2 3 4 5 6 7 8 9 10 sudo apt update sudo apt upgrade sudo apt-get install fswebcam sudo fswebcam -r 720x640 --jpeg 85 -D 1 web-cam-shot.jpg sudo fswebcam -d /dev/video2 --no-banner -r 1280x720 test/test.jpg 或 sudo fswebcam -d /dev/video0 -r 720x640 --jpeg 85 -D 1 web-cam-shot.jpg -d代表指定哪个设备]]></description>
+</item>
+<item>
+    <title>树莓命令行自动拍照脚本</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%87%AA%E5%8A%A8%E6%8B%8D%E7%85%A7%E8%84%9A%E6%9C%AC/</link>
+    <pubDate>Wed, 28 Feb 2024 15:20:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%87%AA%E5%8A%A8%E6%8B%8D%E7%85%A7%E8%84%9A%E6%9C%AC/</guid>
+    <description><![CDATA[参考链接 引用 https://blog.csdn.net/weixin_42361175/article/details/117011888# https://blog.csdn.net/u012206617/article/details/118366597 脚本内容如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 #!/bin/bash echo &#34;Welcome !&#34; echo &#34;The program will start now !&#34; #sudo apt update &amp;&amp; sudo apt upgrade -y #sudo apt-get]]></description>
+</item>
+<item>
+    <title>树莓派centos找不到wlan0网卡解决方法</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BEcentos%E6%89%BE%E4%B8%8D%E5%88%B0wlan0%E7%BD%91%E5%8D%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+    <pubDate>Fri, 29 Dec 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BEcentos%E6%89%BE%E4%B8%8D%E5%88%B0wlan0%E7%BD%91%E5%8D%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+    <description><![CDATA[操作步骤 在以下路径：/usr/lib/firmwear/brcm/ 用一张新的内存卡烧录同样的镜像文件，插到树莓派运行 进入路径：/usr/li]]></description>
+</item>
+<item>
+    <title>ubuntu安装桌面、配置远程</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/ubuntu%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B/</link>
+    <pubDate>Mon, 25 Dec 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/ubuntu%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B/</guid>
+    <description><![CDATA[摘要 引用 ubuntu-server安装桌面： https://zhuanlan.zhihu.com/p/373773218 安装ubuntu-desktop中断之后重新安装报错: https://blog.csdn.net/u013832707/article/details/113104006 ubuntu远程配置桌面： https://blog.csdn.net/siri99999/article/details/110704597 操作步骤 u]]></description>
+</item>
+<item>
+    <title>VMware虚拟机安装klipper</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/vmware%E8%99%9A%E6%8B%9F%E6%9C%BAklipper/</link>
+    <pubDate>Mon, 11 Dec 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/vmware%E8%99%9A%E6%8B%9F%E6%9C%BAklipper/</guid>
+    <description><![CDATA[操作步骤 下载VMware，并安装： 1 2 https://pan.baidu.com/s/1Hc3yK1oVUY3m3N6ZDgZE3A 提取码：3456 VMware下ubuntu设置共享文件夹： 1 2 3 4 sudo apt update sudo apt install open-vm-tools-desktop fuse sudo mkdir /mnt/hgfs sudo mount -t fuse.vmhgfs-fuse .host:/ /mnt/hgfs]]></description>
+</item>
+<item>
+    <title>机顶盒玩客云等设备激活hinas的wifi功能</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%9C%BA%E9%A1%B6%E7%9B%92%E7%8E%A9%E5%AE%A2%E4%BA%91%E7%AD%89%E8%AE%BE%E5%A4%87%E6%BF%80%E6%B4%BBhinas%E7%9A%84wifi%E5%8A%9F%E8%83%BD/</link>
+    <pubDate>Fri, 08 Dec 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%9C%BA%E9%A1%B6%E7%9B%92%E7%8E%A9%E5%AE%A2%E4%BA%91%E7%AD%89%E8%AE%BE%E5%A4%87%E6%BF%80%E6%B4%BBhinas%E7%9A%84wifi%E5%8A%9F%E8%83%BD/</guid>
+    <description><![CDATA[参考链接 引用 参考链接： https://bbs.histb.com/d/18-wifi 相关文件下载地址： 链接：https://pan.baidu.com/s/10QmX6Z4mb_p_9SdOC4BMU]]></description>
+</item>
+<item>
+    <title>树莓派镜像备份</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%95%9C%E5%83%8F%E5%A4%87%E4%BB%BD/</link>
+    <pubDate>Thu, 30 Nov 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%95%9C%E5%83%8F%E5%A4%87%E4%BB%BD/</guid>
+    <description><![CDATA[技巧 用于备份搭建了很多服务的树莓派系统，防止人为损坏系统导致需要重头开始搭建服务. 最好的方案就是采用：win32disk全盘备份+vmwar]]></description>
+</item>
+<item>
+    <title>nanopi安装gpio和python的RPi.GPIO_NP库</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/nanopi%E5%AE%89%E8%A3%85gpio%E5%92%8Cpython%E7%9A%84rpi.gpio_np%E5%BA%93/</link>
+    <pubDate>Wed, 22 Nov 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/nanopi%E5%AE%89%E8%A3%85gpio%E5%92%8Cpython%E7%9A%84rpi.gpio_np%E5%BA%93/</guid>
+    <description><![CDATA[摘要 引用 参考链接: https://zhuanlan.zhihu.com/p/423773714 https://github.com/friendlyarm/WiringNP https://github.com/friendlyarm/RPi.GPIO_NP nanopi支持安装gpio和RPi.GPIO_NP库的板子型号有: NanoPi Neo NanoPi Neo Air NanoPi Duo NanoPi Duo2 NanoPi NEO2 NanoPi NEO Plus2 NanoPi M1 NanoPi M1 Plus NanoPi NEO Core NanoPi NEO]]></description>
+</item>
+<item>
+    <title>ubuntu操作记录</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/ubuntu%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
+    <pubDate>Wed, 22 Nov 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/ubuntu%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
+    <description><![CDATA[问题及解决 修改/etc/sudoers文件发现显示/etc/sudoers is meant to be readonly的警告： 使用visudo指令修改： 1 sudo visudo v]]></description>
+</item>
+<item>
+    <title>nanopi使用ubuntu16.04无法更新系统问题</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/nanopi%E4%BD%BF%E7%94%A8ubuntu16.04%E6%97%A0%E6%B3%95%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E9%97%AE%E9%A2%98/</link>
+    <pubDate>Tue, 21 Nov 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/nanopi%E4%BD%BF%E7%94%A8ubuntu16.04%E6%97%A0%E6%B3%95%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E9%97%AE%E9%A2%98/</guid>
+    <description><![CDATA[摘要 引用 - nanopi使用ubuntu16.04无法更新系统问题 因为1604系统比较古老，要使用apt-get update确避免问题，直接用]]></description>
+</item>
+</channel>
+</rss>

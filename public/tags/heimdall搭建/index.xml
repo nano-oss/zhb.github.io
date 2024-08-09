@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>heimdall搭建 - 标签 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/tags/heimdall%E6%90%AD%E5%BB%BA/</link>
+        <description>heimdall搭建 - 标签 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Sun, 05 Nov 2023 13:44:50 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/tags/heimdall%E6%90%AD%E5%BB%BA/" rel="self" type="application/rss+xml" /><item>
+    <title>Heimdall导航页面搭建</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/heimdall_install/</link>
+    <pubDate>Sun, 05 Nov 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/heimdall_install/</guid>
+    <description><![CDATA[参考链接 引用 docker镜像中文网：https://linuxserver.watercalmx.com/images/ 汉化教程网址：htt]]></description>
+</item>
+</channel>
+</rss>

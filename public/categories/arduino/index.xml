@@ -1,0 +1,40 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Arduino - 分类 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/categories/arduino/</link>
+        <description>Arduino - 分类 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Sat, 26 Aug 2023 13:44:50 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/categories/arduino/" rel="self" type="application/rss+xml" /><item>
+    <title>Arduino驱动点阵数码管_TRY</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/arduino%E9%A9%B1%E5%8A%A8%E7%82%B9%E9%98%B5%E6%95%B0%E7%A0%81%E7%AE%A1_try/</link>
+    <pubDate>Sat, 26 Aug 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/arduino%E9%A9%B1%E5%8A%A8%E7%82%B9%E9%98%B5%E6%95%B0%E7%A0%81%E7%AE%A1_try/</guid>
+    <description><![CDATA[摘要 摘要 /* For more information see https://github.com/maxint-rd/TM16xx * https://learn.adafruit.com/adafruit-gfx-graphics-library/graphics-primitives * 老五8毛钱的双色数码管功能代码,使用前需要先安装tm1640的库 * matrix.setIntensity(1);/]]></description>
+</item>
+<item>
+    <title>Arduino驱动无刷风扇_PWM</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/arduino%E9%A9%B1%E5%8A%A8%E6%97%A0%E5%88%B7%E9%A3%8E%E6%89%87_pwm/</link>
+    <pubDate>Fri, 25 Aug 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/arduino%E9%A9%B1%E5%8A%A8%E6%97%A0%E5%88%B7%E9%A3%8E%E6%89%87_pwm/</guid>
+    <description><![CDATA[摘要 摘要 本例程基于nodemcu 1.0 esp8266 功能：读取电位器数值，控制输出的PWM占空比控制风扇 代码如下 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22]]></description>
+</item>
+<item>
+    <title>Arduino驱动无刷风扇_Plus</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/arduino%E9%A9%B1%E5%8A%A8%E6%97%A0%E5%88%B7%E9%A3%8E%E6%89%87_plus/</link>
+    <pubDate>Tue, 22 Aug 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/arduino%E9%A9%B1%E5%8A%A8%E6%97%A0%E5%88%B7%E9%A3%8E%E6%89%87_plus/</guid>
+    <description><![CDATA[摘要 摘要 本例程基于nodemcu 1.0 esp8266 需要根据头文件安装对应的库 功能：读取电位器数值，OLED显示PWM输出占空比， 控制输出的PWM占空比控制]]></description>
+</item>
+<item>
+    <title>Arduino驱动点阵数码管_TEST</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/arduino%E9%A9%B1%E5%8A%A8%E7%82%B9%E9%98%B5%E6%95%B0%E7%A0%81%E7%AE%A1_test/</link>
+    <pubDate>Sun, 20 Aug 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/arduino%E9%A9%B1%E5%8A%A8%E7%82%B9%E9%98%B5%E6%95%B0%E7%A0%81%E7%AE%A1_test/</guid>
+    <description><![CDATA[摘要 摘要 老五8毛钱的双色数码管测试代码 使用前需要先安装tm1640的库 代码如下 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31]]></description>
+</item>
+</channel>
+</rss>

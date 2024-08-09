@@ -1,0 +1,88 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Klipper - 分类 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/categories/klipper/</link>
+        <description>Klipper - 分类 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Fri, 19 Apr 2024 15:29:32 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/categories/klipper/" rel="self" type="application/rss+xml" /><item>
+    <title>玩客云刷Armbian安装klipper</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7armbian%E5%AE%89%E8%A3%85klipper/</link>
+    <pubDate>Fri, 19 Apr 2024 15:29:32 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7armbian%E5%AE%89%E8%A3%85klipper/</guid>
+    <description><![CDATA[参考链接 引用 http://mirrors.aliyun.com/debian/dists/?spm=a2c6h.25603864.0.0.142f29e8Iss3Uu https://blog.csdn.net/jamesdodo/article/details/106073576 资料下载 先点击下面链接，下载好镜像文件和工具备用，需要公对公的usb数据线，8G或以上的u盘 1 2 3 玩客云Armbian_20]]></description>
+</item>
+<item>
+    <title>Klipper安装0.96OLED屏幕</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/klipper%E5%AE%89%E8%A3%850.96oled%E5%B1%8F%E5%B9%95/</link>
+    <pubDate>Mon, 01 Apr 2024 15:17:01 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/klipper%E5%AE%89%E8%A3%850.96oled%E5%B1%8F%E5%B9%95/</guid>
+    <description><![CDATA[前言 摘要 新组装的打印机可以通过局域网内浏览器进行控制打印， 但还是需要一块小屏幕展示打印进度，才不用每次都打开手机或者电脑才能查看。 之前用mk]]></description>
+</item>
+<item>
+    <title>Klipper配置网床补偿实现完美首层打印</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/klipper%E9%85%8D%E7%BD%AE%E7%BD%91%E5%BA%8A%E8%A1%A5%E5%81%BF%E5%AE%9E%E7%8E%B0%E5%AE%8C%E7%BE%8E%E9%A6%96%E5%B1%82%E6%89%93%E5%8D%B0/</link>
+    <pubDate>Thu, 28 Mar 2024 17:43:39 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/klipper%E9%85%8D%E7%BD%AE%E7%BD%91%E5%BA%8A%E8%A1%A5%E5%81%BF%E5%AE%9E%E7%8E%B0%E5%AE%8C%E7%BE%8E%E9%A6%96%E5%B1%82%E6%89%93%E5%8D%B0/</guid>
+    <description><![CDATA[参考链接 引用 本文主要针对没有配置自动调平工具的3d打印机，配置网床补偿以达到完美打印首层的目的 https://www.bilibili.com/video/BV1ao4y1j7uy 参考视频来自B站up主： 三十而肥2017 操作]]></description>
+</item>
+<item>
+    <title>创想三维ender刷klipper下位机</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/</link>
+    <pubDate>Wed, 27 Mar 2024 20:55:11 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/</guid>
+    <description><![CDATA[参考链接 引用 本文主要针对创想三维的ender3-v2-2020机型，主板型号4.4.2，主控GD32F303 其他ender3的型号可以参照以]]></description>
+</item>
+<item>
+    <title>VMware虚拟机安装klipper</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/vmware%E8%99%9A%E6%8B%9F%E6%9C%BAklipper/</link>
+    <pubDate>Mon, 11 Dec 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/vmware%E8%99%9A%E6%8B%9F%E6%9C%BAklipper/</guid>
+    <description><![CDATA[操作步骤 下载VMware，并安装： 1 2 https://pan.baidu.com/s/1Hc3yK1oVUY3m3N6ZDgZE3A 提取码：3456 VMware下ubuntu设置共享文件夹： 1 2 3 4 sudo apt update sudo apt install open-vm-tools-desktop fuse sudo mkdir /mnt/hgfs sudo mount -t fuse.vmhgfs-fuse .host:/ /mnt/hgfs]]></description>
+</item>
+<item>
+    <title>klipper暂停和恢复打印配置代码</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/pause_resume/</link>
+    <pubDate>Sat, 02 Dec 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/pause_resume/</guid>
+    <description><![CDATA[3D打印机暂停和恢复打印代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 [gcode_macro PAUSE] rename_existing: BASE_PAUSE gcode: {% set E = params.E|default(1.7)|float %} {% set x_park = printer.toolhead.axis_maximum.x|float - 5.0 %} {% set y_park = printer.toolhead.axis_maximum.y|float -]]></description>
+</item>
+<item>
+    <title>香橙派驱动树莓派5-7寸触摸屏</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E9%A6%99%E6%A9%99%E6%B4%BE%E9%A9%B1%E5%8A%A8%E6%A0%91%E8%8E%93%E6%B4%BE5-7%E5%AF%B8%E8%A7%A6%E6%91%B8%E5%B1%8F/</link>
+    <pubDate>Mon, 30 Oct 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E9%A6%99%E6%A9%99%E6%B4%BE%E9%A9%B1%E5%8A%A8%E6%A0%91%E8%8E%93%E6%B4%BE5-7%E5%AF%B8%E8%A7%A6%E6%91%B8%E5%B1%8F/</guid>
+    <description><![CDATA[技巧 香橙派驱动树莓派5-7寸触摸屏 系统最好是ubuntu klipperscreen官方网址: https://klipperscreen.readthedocs.io/en/latest/ 操作步骤 正常安装klipper、fluid、m]]></description>
+</item>
+<item>
+    <title>Prusa mk3s配置klipper</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/prusa-mk3s%E9%85%8D%E7%BD%AEklipper/</link>
+    <pubDate>Tue, 10 Oct 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/prusa-mk3s%E9%85%8D%E7%BD%AEklipper/</guid>
+    <description><![CDATA[摘要 摘要 prusa mk3s配置klipper 官方参考地址： https://github.com/dz0ny/klipper-prusa-mk3s https://github.com/dz0ny/klipper-prusa-mk3s/blob/main/printer.template.cfg https://klipperscreen.readthedocs.io/en/latest/Troubleshooting/ 操作步骤 使用kiauh脚本安装klipperscreen、klipper、fluid]]></description>
+</item>
+<item>
+    <title>蜘蛛spider2.3编译下位机固件</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E8%9C%98%E8%9B%9Bspider2.3%E7%BC%96%E8%AF%91%E4%B8%8B%E4%BD%8D%E6%9C%BA%E5%9B%BA%E4%BB%B6/</link>
+    <pubDate>Wed, 02 Aug 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E8%9C%98%E8%9B%9Bspider2.3%E7%BC%96%E8%AF%91%E4%B8%8B%E4%BD%8D%E6%9C%BA%E5%9B%BA%E4%BB%B6/</guid>
+    <description><![CDATA[参考链接 引用 https://www.bilibili.com/read/cv24075991/ http://git.fysetc.com.cn/FYSETC/FYSETC-SPIDER/src/branch/main/%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3_%E4%B8%AD%E6%96%87.md#user-content-112-spider-v2x 操作步骤 klipper编译固件 选择 STMicroelectronics STM32 选择 STM32F446 选择 12 MHz crystal 选择 32KiB bootloader 如果使用 USB 线连接树莓派和蜘蛛主板，选择选项 USB (on PA11/PA1]]></description>
+</item>
+<item>
+    <title>Klipper安装指南</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/klipper_install/</link>
+    <pubDate>Fri, 05 May 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/klipper_install/</guid>
+    <description><![CDATA[参考链接 引用 香橙派镜像下载地址： http://www.orangepi.cn/html/hardWare/computerAndMicrocontrollers/service-and-support/Orange-Pi-Zero-2.html canbus-ebb刷机教程: https://www.bilibili.com/video/BV1tN4y1F7wo/?vd_source=83eaf6e4edc3987cb641faad4036a9f3 N1盒子安装Armbian系统教程： https://www.right.com.cn/forum/thread-510423-1-1.html https://post.smzdm.com/p/alpwnxmp/ 安装klipper 1 2 3 4 5 6 7 8]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>玩客云刷Armbian安装klipper - Bin&#39;s Blog</title><meta name="Description" content="路漫漫其修远兮，吾将上下而求索！"><meta property="og:title" content="玩客云刷Armbian安装klipper" />
+<meta property="og:description" content="参考链接 引用 http://mirrors.aliyun.com/debian/dists/?spm=a2c6h.25603864.0.0.142f29e8Iss3Uu https://blog.csdn.net/jamesdodo/article/details/106073576 资料下载 先点击下面链接，下载好镜像文件和工具备用，需要公对公的usb数据线，8G或以上的u盘 1 2 3 玩客云Armbian_20" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://naonano.gitee.io/zhb.gitee.io/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7armbian%E5%AE%89%E8%A3%85klipper/" /><meta property="og:image" content="https://naonano.gitee.io/zhb.gitee.io/img/header.jpg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-04-19T15:29:32+08:00" />
+<meta property="article:modified_time" content="2024-04-19T15:29:32+08:00" /><meta property="og:site_name" content="Bin&#39;s Blog" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://naonano.gitee.io/zhb.gitee.io/img/header.jpg" /><meta name="twitter:title" content="玩客云刷Armbian安装klipper"/>
+<meta name="twitter:description" content="参考链接 引用 http://mirrors.aliyun.com/debian/dists/?spm=a2c6h.25603864.0.0.142f29e8Iss3Uu https://blog.csdn.net/jamesdodo/article/details/106073576 资料下载 先点击下面链接，下载好镜像文件和工具备用，需要公对公的usb数据线，8G或以上的u盘 1 2 3 玩客云Armbian_20"/>
+<meta name="application-name" content="Bin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Bin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://naonano.gitee.io/zhb.gitee.io/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7armbian%E5%AE%89%E8%A3%85klipper/" /><link rel="prev" href="https://naonano.gitee.io/zhb.gitee.io/klipper%E5%AE%89%E8%A3%850.96oled%E5%B1%8F%E5%B9%95/" /><link rel="next" href="https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A4%87%E4%BB%BD%E9%95%9C%E5%83%8F%E6%9E%81%E7%AE%80%E6%93%8D%E4%BD%9C%E7%89%88/" /><link rel="stylesheet" href="/zhb.gitee.io/css/style.min.css"><link rel="preload" href="/zhb.gitee.io/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/zhb.gitee.io/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/zhb.gitee.io/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/zhb.gitee.io/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "玩客云刷Armbian安装klipper",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/naonano.gitee.io\/zhb.gitee.io\/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7armbian%E5%AE%89%E8%A3%85klipper\/"
+        },"genre": "posts","keywords": "3d打印机","wordcount":  1447 ,
+        "url": "https:\/\/naonano.gitee.io\/zhb.gitee.io\/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7armbian%E5%AE%89%E8%A3%85klipper\/","datePublished": "2024-04-19T15:29:32+08:00","dateModified": "2024-04-19T15:29:32+08:00","license": "本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Bin"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zhb.gitee.io/" title="Bin&#39;s Blog"><span class="header-title-pre"><i class="fa-solid fa-dragon" style="color: #744da9;"></i></span> Bin&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zhb.gitee.io/" title="首页"><i class="fa-solid fa-house" style="color: #744da9;"></i> 首页 </a><a class="menu-item" href="/zhb.gitee.io/posts/" title="全部文章"><i class="fa-solid fa-pen" style="color: #744da9;"></i> 全部文章-时间线 </a><a class="menu-item" href="/zhb.gitee.io/categories/" title="文章分类"><i class="fa-brands fa-typo3" style="color: #744da9;"></i> 文章分类 </a><a class="menu-item" href="/zhb.gitee.io/tags/" title="文章标签"><i class="fa-solid fa-tag" style="color: #744da9;"></i> 文章标签 </a><a class="menu-item" href="/zhb.gitee.io/download/" title="资源分享"><i class="fa-solid fa-share-nodes" style="color: #744da9;"></i> 资源分享 </a><a class="menu-item" href="/zhb.gitee.io/self/" title="个人简历"><i class="fa-solid fa-person-praying" style="color: #744da9;"></i> 个人简历 </a><a class="menu-item" href="/zhb.gitee.io/about/" title="关于"><i class="fa-solid fa-circle-info" style="color: #744da9;"></i> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="请输入关键词搜索" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zhb.gitee.io/" title="Bin&#39;s Blog"><span class="header-title-pre"><i class="fa-solid fa-dragon" style="color: #744da9;"></i></span> Bin&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="请输入关键词搜索" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zhb.gitee.io/" title="首页"><i class="fa-solid fa-house" style="color: #744da9;"></i>首页</a><a class="menu-item" href="/zhb.gitee.io/posts/" title="全部文章"><i class="fa-solid fa-pen" style="color: #744da9;"></i>全部文章-时间线</a><a class="menu-item" href="/zhb.gitee.io/categories/" title="文章分类"><i class="fa-brands fa-typo3" style="color: #744da9;"></i>文章分类</a><a class="menu-item" href="/zhb.gitee.io/tags/" title="文章标签"><i class="fa-solid fa-tag" style="color: #744da9;"></i>文章标签</a><a class="menu-item" href="/zhb.gitee.io/download/" title="资源分享"><i class="fa-solid fa-share-nodes" style="color: #744da9;"></i>资源分享</a><a class="menu-item" href="/zhb.gitee.io/self/" title="个人简历"><i class="fa-solid fa-person-praying" style="color: #744da9;"></i>个人简历</a><a class="menu-item" href="/zhb.gitee.io/about/" title="关于"><i class="fa-solid fa-circle-info" style="color: #744da9;"></i>关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">玩客云刷Armbian安装klipper</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zhb.gitee.io/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Bin</a></span>&nbsp;<span class="post-category">收录于 <a href="/zhb.gitee.io/categories/%E7%8E%A9%E5%AE%A2%E4%BA%91/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>玩客云</a>&nbsp;<a href="/zhb.gitee.io/categories/klipper/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Klipper</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-04-19">2024-04-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1447 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#参考链接">参考链接</a></li>
+            <li><a href="#资料下载">资料下载</a></li>
+            <li><a href="#操作步骤">操作步骤</a>
+              <ul>
+                <li><a href="#刷写系统">刷写系统</a></li>
+                <li><a href="#换源">换源</a></li>
+                <li><a href="#安装相关依赖">安装相关依赖</a></li>
+                <li><a href="#安装klipper">安装klipper</a></li>
+                <li><a href="#部分操作指令">部分操作指令</a></li>
+              </ul>
+            </li>
+            <li><a href="#总结">总结</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="参考链接">参考链接</h3>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw" aria-hidden="true"></i>引用<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre><code>http://mirrors.aliyun.com/debian/dists/?spm=a2c6h.25603864.0.0.142f29e8Iss3Uu
+https://blog.csdn.net/jamesdodo/article/details/106073576
+</code></pre>
+</div>
+        </div>
+    </div>
+<br>
+<h3 id="资料下载">资料下载</h3>
+<p>先点击下面链接，下载好镜像文件和工具备用，需要公对公的usb数据线，8G或以上的u盘</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">玩客云Armbian_20.11_Aml-s81...-支持USB-WIFI最终完美版.7z
+</span></span><span class="line"><span class="cl">https://www.alipan.com/s/6XY3VCGQf1F
+</span></span><span class="line"><span class="cl">提取码: 6ji5
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<h3 id="操作步骤">操作步骤</h3>
+<br>
+<h4 id="刷写系统">刷写系统</h4>
+<blockquote>
+<p>玩客云有1.1和1.3两个版本的固件，刷写时需要短接板子上的触点才能进入下载模式，触点位置请自行百度。</p>
+</blockquote>
+<ol>
+<li>打开<code>Aml_Burn_Tool</code>选择<code>首选底包.img</code>，然后点击<code>开始按钮</code>，用数据线连接电脑和板子<code>靠近hdmi口的usb</code>，短接板子触点，给板子上电，这时会自动开始刷写，如果没反应就需要重新短接并上电，多试几次就可以，等待几分钟后刷写完成。</li>
+</ol>
+<br>
+<ol start="2">
+<li>使用镜像烧录工具(如etcher或win32disk)，插上u盘，将<code>wanke-emmc.img</code>文件刷进u盘里，然后将u盘插到板子<code>靠近网口的usb</code>，等待灯停止闪烁变为<code>蓝灯</code>，整个过程大概五分钟。</li>
+</ol>
+<br>
+<ol start="3">
+<li>拔下u盘，插到电脑继续烧写镜像文件：<code>新老版本玩客云双usb口都可用Armbian_20.11_Aml-s812_5.9.0-支持USB-WIFI最终完美版.img</code>到U盘上。之后将U盘插到板子<code>靠近网口的usb</code>，给板子上电。 用板子的hdmi连接屏幕插上键盘操作，或把板子用网线插到路由器上，使用ssh登录，板子在路由器后台的主机名称为<code>arm</code></li>
+</ol>
+<br>
+<p>此时进入系统，用户名：root，密码：1234 <br>
+使用以下指令安装系统：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /boot/install
+</span></span><span class="line"><span class="cl">./install.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>等待系统重启即可拔掉u盘</p>
+<blockquote>
+<p>后续系统如果崩溃了，可以使用第三步重新刷写系统，不需要从第一步重新开始刷。</p>
+</blockquote>
+<br>
+<h4 id="换源">换源</h4>
+<blockquote>
+<p>由于本系统为20版本也就是debian的buster分支，很多源已经地址失效，我也是折腾很久才知道要这样换的。</p>
+</blockquote>
+<ol>
+<li>替换<code>sources.list</code>内容
+使用以下指令：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak
+</span></span><span class="line"><span class="cl">sudo nano /etc/apt/sources.list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在打开的文件中黏贴以下内容并保存。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#deb http://mirrors.aliyun.com/debian buster main contrib non-free
+</span></span><span class="line"><span class="cl">#deb http://mirrors.aliyun.com/debian buster-updates main contrib non-free
+</span></span><span class="line"><span class="cl">#deb http://mirrors.aliyun.com/debian buster-backports main contrib non-free
+</span></span><span class="line"><span class="cl">#deb http://mirrors.aliyun.com/debian buster/updates main contrib non-free
+</span></span><span class="line"><span class="cl">deb http://mirrors.aliyun.com/debian/ buster main non-free contrib
+</span></span><span class="line"><span class="cl">#deb-src http://mirrors.aliyun.com/debian/ buster main non-free contrib
+</span></span><span class="line"><span class="cl">deb http://mirrors.aliyun.com/debian-security buster/updates main
+</span></span><span class="line"><span class="cl">#deb-src http://mirrors.aliyun.com/debian-security buster/updates main
+</span></span><span class="line"><span class="cl">deb http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
+</span></span><span class="line"><span class="cl">#deb-src http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
+</span></span><span class="line"><span class="cl">deb http://mirrors.aliyun.com/debian/ oldstable-backports main non-free contrib
+</span></span><span class="line"><span class="cl">#deb-src http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ol start="2">
+<li>替换<code>armbian.list</code>内容
+使用以下指令：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo mv /etc/apt/sources.list.d/armbian.list /etc/apt/sources.list.d/armbian.list.bak
+</span></span><span class="line"><span class="cl">sudo nano /etc/apt/sources.list.d/armbian.list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在打开的文件中黏贴以下内容并保存。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#deb http://apt.armbian.com buster main buster-utils buster-desktop
+</span></span><span class="line"><span class="cl">deb http://mirrors.aliyun.com/debian buster main buster-utils buster-desktop
+</span></span><span class="line"><span class="cl">#deb [trusted=yes] http://mirrors.tuna.tsinghua.edu.cn/armbian buster main buster-utils buster-desktop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ol start="3">
+<li>使用更新命令更新系统</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">sudo apt upgrade
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<h4 id="安装相关依赖">安装相关依赖</h4>
+<ol>
+<li>先创建一个klipper用户并切换到klipper用户</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo adduser klipper
+</span></span><span class="line"><span class="cl">（sudo userdel -r username）
+</span></span><span class="line"><span class="cl">sudo usermod -a -G adm klipper
+</span></span><span class="line"><span class="cl">sudo usermod -a -G sudo klipper
+</span></span><span class="line"><span class="cl">sudo gpasswd --add klipper dialout
+</span></span><span class="line"><span class="cl">su - klipper
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ol start="2">
+<li>安装相关依赖软件包</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev git tree
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ol start="3">
+<li>安装python3.8</li>
+</ol>
+<blockquote>
+<p>由于本系统自带的是python3.7，安装klipper时候会显示版本过低，所以这里需要手动升级一下python版本</p>
+</blockquote>
+<p>操作如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz
+</span></span><span class="line"><span class="cl">或
+</span></span><span class="line"><span class="cl">wget https://www.python.org/ftp/python/3.11.9/Python-3.11.9.tgz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo tar -zxvf Python-3.8.5.tgz
+</span></span><span class="line"><span class="cl">cd Python-3.8.5
+</span></span><span class="line"><span class="cl">sudo ./configure --prefix=/usr/local/python3 &amp;&amp; sudo make &amp;&amp; sudo make install
+</span></span><span class="line"><span class="cl">sudo ln -s /usr/local/python3/bin/python3 /usr/local/bin/python3
+</span></span><span class="line"><span class="cl">sudo ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ol start="4">
+<li>手动编译安装python库文件</li>
+</ol>
+<blockquote>
+<p>安装klipper时候会提示缺少zlib导致无法安装pillow，这里先手动安装一下</p>
+</blockquote>
+<p>操作步骤如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget http://www.zlib.net/zlib-1.3.1.tar.gz
+</span></span><span class="line"><span class="cl">wget http://ijg.org/files/jpegsrc.v9e.tar.gz
+</span></span><span class="line"><span class="cl">tar -zxvf zlib-1.3.1.tar.gz
+</span></span><span class="line"><span class="cl">tar -zxvf jpegsrc.v9e.tar.gz
+</span></span><span class="line"><span class="cl">之后分别进入目录，编译安装即可
+</span></span><span class="line"><span class="cl">sudo ./configure &amp;&amp; sudo make &amp;&amp; sudo make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ol start="5">
+<li>pip换源</li>
+</ol>
+<blockquote>
+<p>由于pip工具默认使用国外的地址，网络不好会导致安装klipper失败，所以需要先换源。</p>
+</blockquote>
+<p>操作如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+</span></span><span class="line"><span class="cl">pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<h4 id="安装klipper">安装klipper</h4>
+<blockquote>
+<p>接下来的klipper安装就和普通的没啥区别了，我这里不多赘述</p>
+</blockquote>
+<p>操作如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git clone https://gitee.com/miroky/kiauh.git
+</span></span><span class="line"><span class="cl">cd kiauh
+</span></span><span class="line"><span class="cl">./kiauh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<h4 id="部分操作指令">部分操作指令</h4>
+<p>查看端口</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ls /dev/serial/by-id/*
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<p>连接wifi</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">nmtui-connect
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<h3 id="总结">总结</h3>
+<p><strong>本文主要记录了使用玩客云作为3d打印机klipper固件的上位机操作，会遇到比较多的坑，故在此做下记录，后续可以参考，不必再次重新摸索。</strong></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-04-19</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://naonano.gitee.io/zhb.gitee.io/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7armbian%E5%AE%89%E8%A3%85klipper/" data-title="玩客云刷Armbian安装klipper" data-hashtags="3d打印机"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://naonano.gitee.io/zhb.gitee.io/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7armbian%E5%AE%89%E8%A3%85klipper/" data-hashtag="3d打印机"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://naonano.gitee.io/zhb.gitee.io/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7armbian%E5%AE%89%E8%A3%85klipper/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://naonano.gitee.io/zhb.gitee.io/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7armbian%E5%AE%89%E8%A3%85klipper/" data-title="玩客云刷Armbian安装klipper"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://naonano.gitee.io/zhb.gitee.io/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7armbian%E5%AE%89%E8%A3%85klipper/" data-title="玩客云刷Armbian安装klipper" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://naonano.gitee.io/zhb.gitee.io/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7armbian%E5%AE%89%E8%A3%85klipper/" data-title="玩客云刷Armbian安装klipper"><i data-svg-src="/zhb.gitee.io/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zhb.gitee.io/tags/3d%E6%89%93%E5%8D%B0%E6%9C%BA/">3d打印机</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zhb.gitee.io/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zhb.gitee.io/klipper%E5%AE%89%E8%A3%850.96oled%E5%B1%8F%E5%B9%95/" class="prev" rel="prev" title="Klipper安装0.96OLED屏幕"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Klipper安装0.96OLED屏幕</a>
+            <a href="/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A4%87%E4%BB%BD%E9%95%9C%E5%83%8F%E6%9E%81%E7%AE%80%E6%93%8D%E4%BD%9C%E7%89%88/" class="next" rel="next" title="树莓派备份镜像极简操作版">树莓派备份镜像极简操作版<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by Bin | A Crazy Man</div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2000 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zhb.gitee.io/" target="_blank">BinByZhang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/zhb.gitee.io/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/zhb.gitee.io/lib/katex/katex.min.css"><script type="text/javascript" src="/zhb.gitee.io/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/katex.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOLVvab84CdYy9","darkTheme":"dark","emitMetadata":"0","inputPosition":"top","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"nano-oss/zhb.io","repoId":"R_kgDOLVvabw"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"7R13ZBU6BQ","algoliaIndex":"zhb.gitee.io","algoliaSearchKey":"abb3e8f6730db0b511261fc3a0f5e8d5","highlightTag":"em","maxResultLength":12,"noResultsFound":"没有找到结果","snippetLength":100,"type":"algolia"}};</script><script type="text/javascript" src="/zhb.gitee.io/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript" src="/js/custom.js"></script></body>
+</html>
+
+

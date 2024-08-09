@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>蜘蛛spider2.3编译下位机固件 - Bin&#39;s Blog</title><meta name="Description" content="路漫漫其修远兮，吾将上下而求索！"><meta property="og:title" content="蜘蛛spider2.3编译下位机固件" />
+<meta property="og:description" content="参考链接 引用 https://www.bilibili.com/read/cv24075991/ http://git.fysetc.com.cn/FYSETC/FYSETC-SPIDER/src/branch/main/%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3_%E4%B8%AD%E6%96%87.md#user-content-112-spider-v2x 操作步骤 klipper编译固件 选择 STMicroelectronics STM32 选择 STM32F446 选择 12 MHz crystal 选择 32KiB bootloader 如果使用 USB 线连接树莓派和蜘蛛主板，选择选项 USB (on PA11/PA1" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://naonano.gitee.io/zhb.gitee.io/%E8%9C%98%E8%9B%9Bspider2.3%E7%BC%96%E8%AF%91%E4%B8%8B%E4%BD%8D%E6%9C%BA%E5%9B%BA%E4%BB%B6/" /><meta property="og:image" content="https://naonano.gitee.io/zhb.gitee.io/img/header.jpg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-02T13:44:50+08:00" />
+<meta property="article:modified_time" content="2024-03-02T20:00:20+08:00" /><meta property="og:site_name" content="Bin&#39;s Blog" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://naonano.gitee.io/zhb.gitee.io/img/header.jpg" /><meta name="twitter:title" content="蜘蛛spider2.3编译下位机固件"/>
+<meta name="twitter:description" content="参考链接 引用 https://www.bilibili.com/read/cv24075991/ http://git.fysetc.com.cn/FYSETC/FYSETC-SPIDER/src/branch/main/%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3_%E4%B8%AD%E6%96%87.md#user-content-112-spider-v2x 操作步骤 klipper编译固件 选择 STMicroelectronics STM32 选择 STM32F446 选择 12 MHz crystal 选择 32KiB bootloader 如果使用 USB 线连接树莓派和蜘蛛主板，选择选项 USB (on PA11/PA1"/>
+<meta name="application-name" content="Bin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Bin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://naonano.gitee.io/zhb.gitee.io/%E8%9C%98%E8%9B%9Bspider2.3%E7%BC%96%E8%AF%91%E4%B8%8B%E4%BD%8D%E6%9C%BA%E5%9B%BA%E4%BB%B6/" /><link rel="prev" href="https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2%E6%91%84%E5%83%8F%E5%A4%B4%E5%88%B0onenet/" /><link rel="next" href="https://naonano.gitee.io/zhb.gitee.io/nas%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" /><link rel="stylesheet" href="/zhb.gitee.io/css/style.min.css"><link rel="preload" href="/zhb.gitee.io/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/zhb.gitee.io/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/zhb.gitee.io/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/zhb.gitee.io/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "蜘蛛spider2.3编译下位机固件",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/naonano.gitee.io\/zhb.gitee.io\/%E8%9C%98%E8%9B%9Bspider2.3%E7%BC%96%E8%AF%91%E4%B8%8B%E4%BD%8D%E6%9C%BA%E5%9B%BA%E4%BB%B6\/"
+        },"genre": "posts","keywords": "Klipper下位机","wordcount":  825 ,
+        "url": "https:\/\/naonano.gitee.io\/zhb.gitee.io\/%E8%9C%98%E8%9B%9Bspider2.3%E7%BC%96%E8%AF%91%E4%B8%8B%E4%BD%8D%E6%9C%BA%E5%9B%BA%E4%BB%B6\/","datePublished": "2023-08-02T13:44:50+08:00","dateModified": "2024-03-02T20:00:20+08:00","license": "本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Bin"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zhb.gitee.io/" title="Bin&#39;s Blog"><span class="header-title-pre"><i class="fa-solid fa-dragon" style="color: #744da9;"></i></span> Bin&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zhb.gitee.io/" title="首页"><i class="fa-solid fa-house" style="color: #744da9;"></i> 首页 </a><a class="menu-item" href="/zhb.gitee.io/posts/" title="全部文章"><i class="fa-solid fa-pen" style="color: #744da9;"></i> 全部文章-时间线 </a><a class="menu-item" href="/zhb.gitee.io/categories/" title="文章分类"><i class="fa-brands fa-typo3" style="color: #744da9;"></i> 文章分类 </a><a class="menu-item" href="/zhb.gitee.io/tags/" title="文章标签"><i class="fa-solid fa-tag" style="color: #744da9;"></i> 文章标签 </a><a class="menu-item" href="/zhb.gitee.io/download/" title="资源分享"><i class="fa-solid fa-share-nodes" style="color: #744da9;"></i> 资源分享 </a><a class="menu-item" href="/zhb.gitee.io/self/" title="个人简历"><i class="fa-solid fa-person-praying" style="color: #744da9;"></i> 个人简历 </a><a class="menu-item" href="/zhb.gitee.io/about/" title="关于"><i class="fa-solid fa-circle-info" style="color: #744da9;"></i> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="请输入关键词搜索" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zhb.gitee.io/" title="Bin&#39;s Blog"><span class="header-title-pre"><i class="fa-solid fa-dragon" style="color: #744da9;"></i></span> Bin&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="请输入关键词搜索" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zhb.gitee.io/" title="首页"><i class="fa-solid fa-house" style="color: #744da9;"></i>首页</a><a class="menu-item" href="/zhb.gitee.io/posts/" title="全部文章"><i class="fa-solid fa-pen" style="color: #744da9;"></i>全部文章-时间线</a><a class="menu-item" href="/zhb.gitee.io/categories/" title="文章分类"><i class="fa-brands fa-typo3" style="color: #744da9;"></i>文章分类</a><a class="menu-item" href="/zhb.gitee.io/tags/" title="文章标签"><i class="fa-solid fa-tag" style="color: #744da9;"></i>文章标签</a><a class="menu-item" href="/zhb.gitee.io/download/" title="资源分享"><i class="fa-solid fa-share-nodes" style="color: #744da9;"></i>资源分享</a><a class="menu-item" href="/zhb.gitee.io/self/" title="个人简历"><i class="fa-solid fa-person-praying" style="color: #744da9;"></i>个人简历</a><a class="menu-item" href="/zhb.gitee.io/about/" title="关于"><i class="fa-solid fa-circle-info" style="color: #744da9;"></i>关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">蜘蛛spider2.3编译下位机固件</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zhb.gitee.io/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Bin</a></span>&nbsp;<span class="post-category">收录于 <a href="/zhb.gitee.io/categories/klipper/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Klipper</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-08-02">2023-08-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 825 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#参考链接">参考链接</a></li>
+            <li><a href="#操作步骤">操作步骤</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="参考链接">参考链接</h3>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw" aria-hidden="true"></i>引用<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre><code>https://www.bilibili.com/read/cv24075991/
+http://git.fysetc.com.cn/FYSETC/FYSETC-SPIDER/src/branch/main/%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3_%E4%B8%AD%E6%96%87.md#user-content-112-spider-v2x
+</code></pre>
+</div>
+        </div>
+    </div>
+<br>
+<h3 id="操作步骤">操作步骤</h3>
+<ol start="0">
+<li>klipper编译固件 <br>
+选择 <code>STMicroelectronics STM32</code> <br>
+选择 <code>STM32F446</code> <br>
+选择 <code>12 MHz crystal</code> <br>
+选择 <code>32KiB bootloader</code> <br>
+如果使用 USB 线连接树莓派和蜘蛛主板，选择选项 <code>USB (on PA11/PA12)</code>,还需要改成<code>no bootloader</code> <br>
+如果使用串口连接树莓派和蜘蛛，选择选项 <code>Serial (on USART1 PA10/PA9)</code></li>
+</ol>
+<br>
+<ol>
+<li>卡刷： <br>
+用 TF 进行固件更新，只需要把你编译好的 firmware.bin 文件（如果是 klipper 固件的话，默认生成 <code>klipper.bin</code> 你需要把 <code>klipper.bin</code> 改名成 <code>firmware.bin</code>拷贝到你的 TF 卡中，插入蜘蛛主板的 TF 卡槽中，给蜘蛛上电。指示灯开始闪烁表示开始烧录，TF 卡旁边的指示灯不再闪烁即烧录完成。拔下 TF 卡，然后插到电脑上，你会发现 <code>firmware.bin</code> 被重新命名为 <code>old.bin</code>，说明烧录成功。如果名称不变，说明没有烧录成功。</li>
+</ol>
+<br>
+<ol start="2">
+<li>线刷： <br>
+第一步：进入 <code>DFU</code> 模式 <br>
+首先<code>断开电源</code> <br>
+用跳线帽短接 <code>5V</code> 管脚和 <code>DC5V</code> <br>
+用跳线帽短接 <code>BT0</code> 和 <code>3.3V</code> <br>
+用 USB 线连接主板和你的电脑（或者树莓派） <br>
+上电 <code>24v</code> <br>
+现在主板已经在 <code>DFU</code> 模式了，如果没有请按一下蜘蛛的复位按钮. 除了 <code>24V</code> 供电，也可以用 <code>USB 5V</code> 供电，不过在上述2步时跳线帽需要短接 <code>5V</code> 管脚 和 <code>USB5V</code>（翻到主板背面可以看到丝印）。 <br>
+烧录完成后，把 <code>BT0</code> 和 <code>3.3V</code> 跳线帽拔下 <br></li>
+</ol>
+<p>第二步：安装 <code>dfu-util</code> 软件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt-get install dfu-util
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>进入 DFU 模式之后，确认 dfu-util 软件安装好，可以用 <code>dfu-util --version</code> 命令进行查看，如果有以下类似的输出，则说明 dfu-util 安装好了。 <br></p>
+<p>第三步：<code>发送上传命令</code>
+使用下列命令上传固件。但此之前，需要根据固件和bootloader 的情况，调整这个命令。如果是 klipper 固件，生成的固件一般在 <code>out/klipper</code> 把以下命令中的 <code>firmware.bin</code> 改成 <code>out/klipper.bin</code>，支持 hex 格式如 firmware.hex . 根据自己主板的 bootloader 的情况改变命令中的 <code>0x08008000</code> 部分。例如你采用的是 Marlin 固件，env 设定为 <code>default_envs = FYSETC_S6</code> ，那么你需要把命令中的 <code>0x08008000</code> 改成<code>0x08010000</code>，如果 env 是 <code>default_envs = FYSETC_S6_8000</code>，则不需要修改。 <br></p>
+<p>如果你用的是 klipper 固件，并且 <code>make menuconfig</code> 的时候如果选择了 <code>No bootloader</code>, 需要把命令中的 <code>0x08008000</code> 改成<code>0x08000000</code>，如果选择了 <code>32kiB bootloader</code>，则不需要更改，如果选择了 <code>64KiB bootloader</code>, 需要把 <code>0x08008000</code> 改成<code>0x08010000</code>，如果是 <code>hex</code> 文件需要把 <code>0x08008000</code> 改成<code>0x08000000</code>. <br></p>
+<p>烧录固件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">dfu-util -R -a 0 -s 0x08008000:leave -D firmware.bin
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-03-02</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://naonano.gitee.io/zhb.gitee.io/%E8%9C%98%E8%9B%9Bspider2.3%E7%BC%96%E8%AF%91%E4%B8%8B%E4%BD%8D%E6%9C%BA%E5%9B%BA%E4%BB%B6/" data-title="蜘蛛spider2.3编译下位机固件" data-hashtags="Klipper下位机"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://naonano.gitee.io/zhb.gitee.io/%E8%9C%98%E8%9B%9Bspider2.3%E7%BC%96%E8%AF%91%E4%B8%8B%E4%BD%8D%E6%9C%BA%E5%9B%BA%E4%BB%B6/" data-hashtag="Klipper下位机"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://naonano.gitee.io/zhb.gitee.io/%E8%9C%98%E8%9B%9Bspider2.3%E7%BC%96%E8%AF%91%E4%B8%8B%E4%BD%8D%E6%9C%BA%E5%9B%BA%E4%BB%B6/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://naonano.gitee.io/zhb.gitee.io/%E8%9C%98%E8%9B%9Bspider2.3%E7%BC%96%E8%AF%91%E4%B8%8B%E4%BD%8D%E6%9C%BA%E5%9B%BA%E4%BB%B6/" data-title="蜘蛛spider2.3编译下位机固件"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://naonano.gitee.io/zhb.gitee.io/%E8%9C%98%E8%9B%9Bspider2.3%E7%BC%96%E8%AF%91%E4%B8%8B%E4%BD%8D%E6%9C%BA%E5%9B%BA%E4%BB%B6/" data-title="蜘蛛spider2.3编译下位机固件" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://naonano.gitee.io/zhb.gitee.io/%E8%9C%98%E8%9B%9Bspider2.3%E7%BC%96%E8%AF%91%E4%B8%8B%E4%BD%8D%E6%9C%BA%E5%9B%BA%E4%BB%B6/" data-title="蜘蛛spider2.3编译下位机固件"><i data-svg-src="/zhb.gitee.io/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zhb.gitee.io/tags/klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/">Klipper下位机</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zhb.gitee.io/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2%E6%91%84%E5%83%8F%E5%A4%B4%E5%88%B0onenet/" class="prev" rel="prev" title="树莓派部署摄像头到onenet"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>树莓派部署摄像头到onenet</a>
+            <a href="/zhb.gitee.io/nas%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="next" rel="next" title="nas搭建指南">nas搭建指南<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by Bin | A Crazy Man</div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2000 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zhb.gitee.io/" target="_blank">BinByZhang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/zhb.gitee.io/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/zhb.gitee.io/lib/katex/katex.min.css"><script type="text/javascript" src="/zhb.gitee.io/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/katex.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOLVvab84CdYy9","darkTheme":"dark","emitMetadata":"0","inputPosition":"top","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"nano-oss/zhb.io","repoId":"R_kgDOLVvabw"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"7R13ZBU6BQ","algoliaIndex":"zhb.gitee.io","algoliaSearchKey":"abb3e8f6730db0b511261fc3a0f5e8d5","highlightTag":"em","maxResultLength":12,"noResultsFound":"没有找到结果","snippetLength":100,"type":"algolia"}};</script><script type="text/javascript" src="/zhb.gitee.io/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript" src="/js/custom.js"></script></body>
+</html>
+
+

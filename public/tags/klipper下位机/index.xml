@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Klipper下位机 - 标签 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/tags/klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/</link>
+        <description>Klipper下位机 - 标签 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Wed, 02 Aug 2023 13:44:50 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/tags/klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/" rel="self" type="application/rss+xml" /><item>
+    <title>蜘蛛spider2.3编译下位机固件</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E8%9C%98%E8%9B%9Bspider2.3%E7%BC%96%E8%AF%91%E4%B8%8B%E4%BD%8D%E6%9C%BA%E5%9B%BA%E4%BB%B6/</link>
+    <pubDate>Wed, 02 Aug 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E8%9C%98%E8%9B%9Bspider2.3%E7%BC%96%E8%AF%91%E4%B8%8B%E4%BD%8D%E6%9C%BA%E5%9B%BA%E4%BB%B6/</guid>
+    <description><![CDATA[参考链接 引用 https://www.bilibili.com/read/cv24075991/ http://git.fysetc.com.cn/FYSETC/FYSETC-SPIDER/src/branch/main/%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3_%E4%B8%AD%E6%96%87.md#user-content-112-spider-v2x 操作步骤 klipper编译固件 选择 STMicroelectronics STM32 选择 STM32F446 选择 12 MHz crystal 选择 32KiB bootloader 如果使用 USB 线连接树莓派和蜘蛛主板，选择选项 USB (on PA11/PA1]]></description>
+</item>
+</channel>
+</rss>

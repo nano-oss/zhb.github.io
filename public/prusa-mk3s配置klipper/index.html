@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Prusa mk3s配置klipper - Bin&#39;s Blog</title><meta name="Description" content="路漫漫其修远兮，吾将上下而求索！"><meta property="og:title" content="Prusa mk3s配置klipper" />
+<meta property="og:description" content="摘要 摘要 prusa mk3s配置klipper 官方参考地址： https://github.com/dz0ny/klipper-prusa-mk3s https://github.com/dz0ny/klipper-prusa-mk3s/blob/main/printer.template.cfg https://klipperscreen.readthedocs.io/en/latest/Troubleshooting/ 操作步骤 使用kiauh脚本安装klipperscreen、klipper、fluid" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://naonano.gitee.io/zhb.gitee.io/prusa-mk3s%E9%85%8D%E7%BD%AEklipper/" /><meta property="og:image" content="https://naonano.gitee.io/zhb.gitee.io/img/header.jpg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-10-10T13:44:50+08:00" />
+<meta property="article:modified_time" content="2024-03-02T20:00:20+08:00" /><meta property="og:site_name" content="Bin&#39;s Blog" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://naonano.gitee.io/zhb.gitee.io/img/header.jpg" /><meta name="twitter:title" content="Prusa mk3s配置klipper"/>
+<meta name="twitter:description" content="摘要 摘要 prusa mk3s配置klipper 官方参考地址： https://github.com/dz0ny/klipper-prusa-mk3s https://github.com/dz0ny/klipper-prusa-mk3s/blob/main/printer.template.cfg https://klipperscreen.readthedocs.io/en/latest/Troubleshooting/ 操作步骤 使用kiauh脚本安装klipperscreen、klipper、fluid"/>
+<meta name="application-name" content="Bin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Bin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://naonano.gitee.io/zhb.gitee.io/prusa-mk3s%E9%85%8D%E7%BD%AEklipper/" /><link rel="prev" href="https://naonano.gitee.io/zhb.gitee.io/ubuntu2004%E5%AE%89%E8%A3%85ros/" /><link rel="next" href="https://naonano.gitee.io/zhb.gitee.io/gitee%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" /><link rel="stylesheet" href="/zhb.gitee.io/css/style.min.css"><link rel="preload" href="/zhb.gitee.io/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/zhb.gitee.io/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/zhb.gitee.io/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/zhb.gitee.io/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Prusa mk3s配置klipper",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/naonano.gitee.io\/zhb.gitee.io\/prusa-mk3s%E9%85%8D%E7%BD%AEklipper\/"
+        },"genre": "posts","keywords": "Klipper安装","wordcount":  539 ,
+        "url": "https:\/\/naonano.gitee.io\/zhb.gitee.io\/prusa-mk3s%E9%85%8D%E7%BD%AEklipper\/","datePublished": "2023-10-10T13:44:50+08:00","dateModified": "2024-03-02T20:00:20+08:00","license": "本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Bin"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zhb.gitee.io/" title="Bin&#39;s Blog"><span class="header-title-pre"><i class="fa-solid fa-dragon" style="color: #744da9;"></i></span> Bin&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zhb.gitee.io/" title="首页"><i class="fa-solid fa-house" style="color: #744da9;"></i> 首页 </a><a class="menu-item" href="/zhb.gitee.io/posts/" title="全部文章"><i class="fa-solid fa-pen" style="color: #744da9;"></i> 全部文章-时间线 </a><a class="menu-item" href="/zhb.gitee.io/categories/" title="文章分类"><i class="fa-brands fa-typo3" style="color: #744da9;"></i> 文章分类 </a><a class="menu-item" href="/zhb.gitee.io/tags/" title="文章标签"><i class="fa-solid fa-tag" style="color: #744da9;"></i> 文章标签 </a><a class="menu-item" href="/zhb.gitee.io/download/" title="资源分享"><i class="fa-solid fa-share-nodes" style="color: #744da9;"></i> 资源分享 </a><a class="menu-item" href="/zhb.gitee.io/self/" title="个人简历"><i class="fa-solid fa-person-praying" style="color: #744da9;"></i> 个人简历 </a><a class="menu-item" href="/zhb.gitee.io/about/" title="关于"><i class="fa-solid fa-circle-info" style="color: #744da9;"></i> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="请输入关键词搜索" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zhb.gitee.io/" title="Bin&#39;s Blog"><span class="header-title-pre"><i class="fa-solid fa-dragon" style="color: #744da9;"></i></span> Bin&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="请输入关键词搜索" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zhb.gitee.io/" title="首页"><i class="fa-solid fa-house" style="color: #744da9;"></i>首页</a><a class="menu-item" href="/zhb.gitee.io/posts/" title="全部文章"><i class="fa-solid fa-pen" style="color: #744da9;"></i>全部文章-时间线</a><a class="menu-item" href="/zhb.gitee.io/categories/" title="文章分类"><i class="fa-brands fa-typo3" style="color: #744da9;"></i>文章分类</a><a class="menu-item" href="/zhb.gitee.io/tags/" title="文章标签"><i class="fa-solid fa-tag" style="color: #744da9;"></i>文章标签</a><a class="menu-item" href="/zhb.gitee.io/download/" title="资源分享"><i class="fa-solid fa-share-nodes" style="color: #744da9;"></i>资源分享</a><a class="menu-item" href="/zhb.gitee.io/self/" title="个人简历"><i class="fa-solid fa-person-praying" style="color: #744da9;"></i>个人简历</a><a class="menu-item" href="/zhb.gitee.io/about/" title="关于"><i class="fa-solid fa-circle-info" style="color: #744da9;"></i>关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Prusa mk3s配置klipper</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zhb.gitee.io/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Bin</a></span>&nbsp;<span class="post-category">收录于 <a href="/zhb.gitee.io/categories/klipper/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Klipper</a>&nbsp;<a href="/zhb.gitee.io/categories/prusamk3s/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>PrusaMK3s</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-10-10">2023-10-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 539 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#摘要">摘要</a></li>
+            <li><a href="#操作步骤">操作步骤</a></li>
+            <li><a href="#官方原版操作如下">官方原版操作如下</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="摘要">摘要</h3>
+<div class="details admonition abstract open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ul fa-fw" aria-hidden="true"></i>摘要<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre><code>prusa mk3s配置klipper
+官方参考地址：
+https://github.com/dz0ny/klipper-prusa-mk3s
+https://github.com/dz0ny/klipper-prusa-mk3s/blob/main/printer.template.cfg
+https://klipperscreen.readthedocs.io/en/latest/Troubleshooting/
+</code></pre>
+</div>
+        </div>
+    </div>
+<br>
+<h3 id="操作步骤">操作步骤</h3>
+<ol>
+<li>使用<code>kiauh</code>脚本安装<code>klipperscreen</code>、<code>klipper</code>、<code>fluidd</code>、<code>moonraker</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git clone https://gitee.com/miroky/kiauh.git
+</span></span><span class="line"><span class="cl">sudo ./kiauh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>使用思谦脚本重新安装<code>MEGASTEAM</code>摄像头驱动</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">bash &lt;(curl -fsSL http://klipper.7130404.xyz:8001/add_webcam.sh)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>3.配置mk3s打印机配置文件</p>
+<p>复制配置文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git clone https://github.com/dz0ny/klipper-prusa-mk3s.git ~/printer_data/config/klipper-prusa-mk3s
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>4.加入以下内容到<code>moonraker.conf</code>方便自动更新：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[update_manager prusa]
+</span></span><span class="line"><span class="cl">type: git_repo
+</span></span><span class="line"><span class="cl">origin: https://github.com/dz0ny/klipper-prusa-mk3s.git
+</span></span><span class="line"><span class="cl">path: ~/printer_data/config/klipper-prusa-mk3s
+</span></span><span class="line"><span class="cl">primary_branch: main
+</span></span><span class="line"><span class="cl">is_system_service: False
+</span></span><span class="line"><span class="cl">managed_services: klipper
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>5.适配自己的打印机，修改配置文件的串口号，解决报错</p>
+<p>6.使用kiauh烧录下位机固件</p>
+<br>
+<h3 id="官方原版操作如下">官方原版操作如下</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="mf">1.</span><span class="n">prepare</span> <span class="n">things</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="n">Get</span> <span class="n">Z</span> <span class="n">offset</span> <span class="n">value</span> <span class="n">from</span> <span class="n">your</span> <span class="n">current</span> <span class="n">firmware</span> <span class="p">(</span><span class="n">Menu</span> <span class="o">-&gt;</span> <span class="n">Calibration</span> <span class="o">-&gt;</span> <span class="n">Z</span><span class="o">-</span><span class="n">offset</span><span class="p">),</span> <span class="n">you</span> <span class="n">will</span> <span class="n">need</span> <span class="n">it</span> <span class="k">for</span> <span class="n">the</span> <span class="n">Klipper</span> <span class="n">config</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Your</span> <span class="n">bed</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">perpendicular</span> <span class="p">(</span><span class="n">based</span> <span class="n">on</span> <span class="n">XYZ</span> <span class="n">Calibration</span><span class="p">)</span><span class="o">.</span> <span class="n">If</span> <span class="ow">not</span> <span class="n">you</span> <span class="n">will</span> <span class="n">have</span> <span class="n">to</span> <span class="k">do</span> <span class="n">the</span> <span class="n">skew</span> <span class="n">calibration</span> <span class="n">before</span> <span class="n">printing</span> <span class="ow">or</span> <span class="n">you</span> <span class="n">risk</span> <span class="n">crashing</span> <span class="n">your</span> <span class="n">nozzle</span> <span class="n">to</span> <span class="n">the</span> <span class="n">bed</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Read</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">dz0ny</span><span class="o">/</span><span class="n">klipper</span><span class="o">-</span><span class="n">prusa</span><span class="o">-</span><span class="n">mk3s</span><span class="o">/</span><span class="n">blob</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">printer</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">cfg</span>
+</span></span><span class="line"><span class="cl"><span class="n">Read</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">klipper3d</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">Installation</span><span class="o">.</span><span class="n">html</span><span class="c1">#building-and-flashing-the-micro-controller</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">2.</span><span class="n">Install</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">mainsail</span><span class="o">.</span><span class="n">xyz</span><span class="o">/</span><span class="n">setup</span><span class="o">/</span><span class="n">mainsail</span><span class="o">-</span><span class="n">os</span> 
+</span></span><span class="line"><span class="cl"><span class="n">to</span> <span class="n">SDCard</span> <span class="ow">and</span> <span class="n">RPI</span> <span class="n">Zero</span> <span class="mi">2</span> <span class="n">W</span>
+</span></span><span class="line"><span class="cl"><span class="n">Connect</span> <span class="n">as</span> <span class="n">described</span> <span class="ow">in</span> 
+</span></span><span class="line"><span class="cl"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">help</span><span class="o">.</span><span class="n">prusa3d</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">article</span><span class="o">/</span><span class="n">raspberry</span><span class="o">-</span><span class="n">pi</span><span class="o">-</span><span class="n">zero</span><span class="o">-</span><span class="n">w</span><span class="o">-</span><span class="n">preparation</span><span class="o">-</span><span class="ow">and</span><span class="o">-</span><span class="n">installation_2180</span>
+</span></span><span class="line"><span class="cl"><span class="n">Update</span> <span class="n">all</span> <span class="n">components</span> <span class="n">under</span> <span class="n">Machine</span> <span class="n">tab</span><span class="p">,</span> <span class="n">otherwise</span> <span class="n">config</span> <span class="n">might</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">able</span> <span class="n">to</span> <span class="nb">load</span>
+</span></span><span class="line"><span class="cl"><span class="n">Clone</span> <span class="n">config</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">dz0ny</span><span class="o">/</span><span class="n">klipper</span><span class="o">-</span><span class="n">prusa</span><span class="o">-</span><span class="n">mk3s</span><span class="o">.</span><span class="n">git</span> <span class="o">~/</span><span class="n">printer_data</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">klipper</span><span class="o">-</span><span class="n">prusa</span><span class="o">-</span><span class="n">mk3s</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">If</span> <span class="n">you</span> <span class="n">are</span> <span class="n">adding</span> <span class="n">this</span> <span class="n">configuration</span> <span class="n">after</span> <span class="n">installing</span> <span class="n">Klipper</span> <span class="n">via</span> <span class="n">KIAUH</span><span class="p">,</span> <span class="n">the</span> <span class="n">directory</span> <span class="n">might</span> <span class="n">be</span> <span class="n">different</span> <span class="o">-</span> <span class="n">typically</span> <span class="n">following</span> 
+</span></span><span class="line"><span class="cl"><span class="o">~/</span><span class="p">[</span><span class="n">printer_name</span><span class="p">]</span><span class="o">/</span><span class="n">printer_data</span><span class="o">/</span><span class="n">config</span><span class="p">,</span> <span class="n">where</span> <span class="p">[</span><span class="n">printer_name</span><span class="p">]</span> <span class="n">is</span> <span class="n">the</span> <span class="n">name</span> <span class="n">you</span> <span class="n">selected</span> <span class="n">during</span> <span class="n">the</span> <span class="n">Kiauh</span> <span class="n">installation</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">3.</span><span class="n">Add</span> <span class="n">the</span> <span class="n">following</span> <span class="n">to</span> <span class="n">the</span> <span class="n">to</span> <span class="n">moonraker</span><span class="o">.</span><span class="n">conf</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">automatic</span> <span class="n">updates</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">update_manager</span> <span class="n">prusa</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">type</span><span class="p">:</span> <span class="n">git_repo</span>
+</span></span><span class="line"><span class="cl"><span class="n">origin</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">dz0ny</span><span class="o">/</span><span class="n">klipper</span><span class="o">-</span><span class="n">prusa</span><span class="o">-</span><span class="n">mk3s</span><span class="o">.</span><span class="n">git</span>
+</span></span><span class="line"><span class="cl"><span class="n">path</span><span class="p">:</span> <span class="o">~/</span><span class="n">printer_data</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">klipper</span><span class="o">-</span><span class="n">prusa</span><span class="o">-</span><span class="n">mk3s</span>
+</span></span><span class="line"><span class="cl"><span class="n">primary_branch</span><span class="p">:</span> <span class="n">main</span>
+</span></span><span class="line"><span class="cl"><span class="n">is_system_service</span><span class="p">:</span> <span class="n">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">managed_services</span><span class="p">:</span> <span class="n">klipper</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">4.</span><span class="n">Copy</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">dz0ny</span><span class="o">/</span><span class="n">klipper</span><span class="o">-</span><span class="n">prusa</span><span class="o">-</span><span class="n">mk3s</span><span class="o">/</span><span class="n">blob</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">printer</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">cfg</span> <span class="n">to</span> <span class="n">printer</span><span class="o">.</span><span class="n">cfg</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">klipper</span> <span class="n">config</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">5.</span><span class="n">Adjust</span> <span class="n">config</span> <span class="n">to</span> <span class="n">your</span> <span class="n">hardware</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">6.</span><span class="n">Flash</span> <span class="n">Klipper</span> <span class="n">to</span> <span class="n">your</span> <span class="n">printer</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">klipper3d</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">Installation</span><span class="o">.</span><span class="n">html</span><span class="c1">#building-and-flashing-the-micro-controller</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">You</span> <span class="n">will</span> <span class="n">still</span> <span class="n">need</span> <span class="n">a</span> <span class="n">USB</span> <span class="n">cable</span> <span class="n">as</span> <span class="n">you</span> <span class="n">cannot</span> <span class="n">flash</span> <span class="n">via</span> <span class="n">an</span> <span class="n">internal</span> <span class="n">serial</span> <span class="n">port</span><span class="o">.</span> <span class="n">You</span> <span class="n">can</span> <span class="n">also</span> <span class="n">use</span> <span class="n">any</span> <span class="n">other</span> <span class="n">computer</span> <span class="n">to</span> <span class="n">compile</span> <span class="n">your</span> <span class="n">firmware</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">7.</span><span class="n">To</span> <span class="n">use</span> <span class="n">this</span> <span class="n">config</span><span class="p">,</span> <span class="n">the</span> <span class="n">firmware</span> <span class="n">should</span> <span class="n">be</span> <span class="n">compiled</span> <span class="k">for</span> <span class="n">the</span> <span class="n">AVR</span> <span class="n">atmega2560</span><span class="o">.</span> <span class="n">To</span> <span class="n">use</span> <span class="n">via</span> <span class="n">serial</span><span class="p">,</span> <span class="ow">in</span> <span class="s2">&#34;make menuconfig&#34;</span> <span class="n">select</span> <span class="s2">&#34;Enable extra low-level configuration options&#34;</span> <span class="ow">and</span> <span class="n">select</span> <span class="n">serial1</span> <span class="p">(</span><span class="n">the</span> <span class="n">RasPi</span> <span class="n">serial</span><span class="p">)</span> <span class="ow">or</span> <span class="n">serial0</span> <span class="n">when</span> <span class="n">you</span> <span class="n">plan</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">via</span> <span class="n">the</span> <span class="n">USB</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">8.</span><span class="n">To</span> <span class="n">flash</span><span class="p">:</span> <span class="n">make</span> <span class="n">flash</span> <span class="n">FLASH_DEVICE</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">serial</span><span class="o">/</span><span class="n">by</span><span class="o">-</span><span class="n">id</span><span class="o">/</span><span class="n">usb</span><span class="o">-</span><span class="n">Prusa_Research__prusa3d</span><span class="o">.</span><span class="n">com__Original_Prusa_i3_MK3_CZPX0620X004XK70128</span><span class="o">-</span><span class="n">if00</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-03-02</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://naonano.gitee.io/zhb.gitee.io/prusa-mk3s%E9%85%8D%E7%BD%AEklipper/" data-title="Prusa mk3s配置klipper" data-hashtags="Klipper安装"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://naonano.gitee.io/zhb.gitee.io/prusa-mk3s%E9%85%8D%E7%BD%AEklipper/" data-hashtag="Klipper安装"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://naonano.gitee.io/zhb.gitee.io/prusa-mk3s%E9%85%8D%E7%BD%AEklipper/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://naonano.gitee.io/zhb.gitee.io/prusa-mk3s%E9%85%8D%E7%BD%AEklipper/" data-title="Prusa mk3s配置klipper"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://naonano.gitee.io/zhb.gitee.io/prusa-mk3s%E9%85%8D%E7%BD%AEklipper/" data-title="Prusa mk3s配置klipper" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://naonano.gitee.io/zhb.gitee.io/prusa-mk3s%E9%85%8D%E7%BD%AEklipper/" data-title="Prusa mk3s配置klipper"><i data-svg-src="/zhb.gitee.io/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zhb.gitee.io/tags/klipper%E5%AE%89%E8%A3%85/">Klipper安装</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zhb.gitee.io/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zhb.gitee.io/ubuntu2004%E5%AE%89%E8%A3%85ros/" class="prev" rel="prev" title="ubuntu2004安装ros"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>ubuntu2004安装ros</a>
+            <a href="/zhb.gitee.io/gitee%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" class="next" rel="next" title="Gitee使用记录">Gitee使用记录<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by Bin | A Crazy Man</div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2000 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zhb.gitee.io/" target="_blank">BinByZhang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/zhb.gitee.io/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/zhb.gitee.io/lib/katex/katex.min.css"><script type="text/javascript" src="/zhb.gitee.io/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/katex.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOLVvab84CdYy9","darkTheme":"dark","emitMetadata":"0","inputPosition":"top","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"nano-oss/zhb.io","repoId":"R_kgDOLVvabw"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"7R13ZBU6BQ","algoliaIndex":"zhb.gitee.io","algoliaSearchKey":"abb3e8f6730db0b511261fc3a0f5e8d5","highlightTag":"em","maxResultLength":12,"noResultsFound":"没有找到结果","snippetLength":100,"type":"algolia"}};</script><script type="text/javascript" src="/zhb.gitee.io/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript" src="/js/custom.js"></script></body>
+</html>
+
+

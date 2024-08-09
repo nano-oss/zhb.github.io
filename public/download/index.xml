@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Downloads on Bin&#39;s Blog</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/download/</link>
+    <description>Recent content in Downloads on Bin&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+    <webMaster>2231637869@qq.com (BinByZhang)</webMaster>
+    <copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright>
+    <lastBuildDate>Tue, 20 Feb 2024 21:45:12 +0800</lastBuildDate>
+    <atom:link href="https://naonano.gitee.io/zhb.gitee.io/download/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>影视资源下载链接</title>
+      <link>https://naonano.gitee.io/zhb.gitee.io/download/%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD/</link>
+      <pubDate>Tue, 20 Feb 2024 21:45:12 +0800</pubDate><author>2231637869@qq.com (BinByZhang)</author>
+      <guid>https://naonano.gitee.io/zhb.gitee.io/download/%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD/</guid>
+      <description>影视资源下载目录</description>
+    </item>
+    <item>
+      <title>软件下载链接</title>
+      <link>https://naonano.gitee.io/zhb.gitee.io/download/%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD/</link>
+      <pubDate>Tue, 20 Feb 2024 21:44:55 +0800</pubDate><author>2231637869@qq.com (BinByZhang)</author>
+      <guid>https://naonano.gitee.io/zhb.gitee.io/download/%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD/</guid>
+      <description>软件下载目录</description>
+    </item>
+  </channel>
+</rss>

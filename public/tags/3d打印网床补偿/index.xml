@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>3d打印网床补偿 - 标签 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/tags/3d%E6%89%93%E5%8D%B0%E7%BD%91%E5%BA%8A%E8%A1%A5%E5%81%BF/</link>
+        <description>3d打印网床补偿 - 标签 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Thu, 28 Mar 2024 17:43:39 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/tags/3d%E6%89%93%E5%8D%B0%E7%BD%91%E5%BA%8A%E8%A1%A5%E5%81%BF/" rel="self" type="application/rss+xml" /><item>
+    <title>Klipper配置网床补偿实现完美首层打印</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/klipper%E9%85%8D%E7%BD%AE%E7%BD%91%E5%BA%8A%E8%A1%A5%E5%81%BF%E5%AE%9E%E7%8E%B0%E5%AE%8C%E7%BE%8E%E9%A6%96%E5%B1%82%E6%89%93%E5%8D%B0/</link>
+    <pubDate>Thu, 28 Mar 2024 17:43:39 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/klipper%E9%85%8D%E7%BD%AE%E7%BD%91%E5%BA%8A%E8%A1%A5%E5%81%BF%E5%AE%9E%E7%8E%B0%E5%AE%8C%E7%BE%8E%E9%A6%96%E5%B1%82%E6%89%93%E5%8D%B0/</guid>
+    <description><![CDATA[参考链接 引用 本文主要针对没有配置自动调平工具的3d打印机，配置网床补偿以达到完美打印首层的目的 https://www.bilibili.com/video/BV1ao4y1j7uy 参考视频来自B站up主： 三十而肥2017 操作]]></description>
+</item>
+</channel>
+</rss>

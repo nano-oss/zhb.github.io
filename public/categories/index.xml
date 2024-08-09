@@ -1,0 +1,88 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Categories - 分类 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/categories/</link>
+        <description>Categories - 分类 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Tue, 07 May 2024 15:59:12 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>树莓派</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
+    <pubDate>Tue, 07 May 2024 15:59:12 &#43;0800</pubDate>
+    <author>BinByZhang</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Klipper</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/categories/klipper/</link>
+    <pubDate>Fri, 19 Apr 2024 15:29:32 &#43;0800</pubDate>
+    <author>BinByZhang</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/categories/klipper/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>玩客云</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/categories/%E7%8E%A9%E5%AE%A2%E4%BA%91/</link>
+    <pubDate>Fri, 19 Apr 2024 15:29:32 &#43;0800</pubDate>
+    <author>BinByZhang</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/categories/%E7%8E%A9%E5%AE%A2%E4%BA%91/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>3d打印机</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/categories/3d%E6%89%93%E5%8D%B0%E6%9C%BA/</link>
+    <pubDate>Mon, 01 Apr 2024 15:17:01 &#43;0800</pubDate>
+    <author>BinByZhang</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/categories/3d%E6%89%93%E5%8D%B0%E6%9C%BA/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>ender3</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/categories/ender3/</link>
+    <pubDate>Wed, 27 Mar 2024 20:55:11 &#43;0800</pubDate>
+    <author>BinByZhang</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/categories/ender3/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>STM32</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/categories/stm32/</link>
+    <pubDate>Tue, 05 Mar 2024 15:57:50 &#43;0800</pubDate>
+    <author>BinByZhang</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/categories/stm32/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>嵌入式学习</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AD%A6%E4%B9%A0/</link>
+    <pubDate>Tue, 05 Mar 2024 15:57:50 &#43;0800</pubDate>
+    <author>BinByZhang</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AD%A6%E4%B9%A0/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>嵌入式知识点</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+    <pubDate>Sun, 03 Mar 2024 19:45:48 &#43;0800</pubDate>
+    <author>BinByZhang</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Win10</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/categories/win10/</link>
+    <pubDate>Sun, 03 Mar 2024 12:58:50 &#43;0800</pubDate>
+    <author>BinByZhang</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/categories/win10/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>问题记录</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
+    <pubDate>Sun, 03 Mar 2024 12:58:50 &#43;0800</pubDate>
+    <author>BinByZhang</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

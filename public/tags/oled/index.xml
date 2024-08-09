@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>oled - 标签 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/tags/oled/</link>
+        <description>oled - 标签 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Mon, 01 Apr 2024 15:17:01 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/tags/oled/" rel="self" type="application/rss+xml" /><item>
+    <title>Klipper安装0.96OLED屏幕</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/klipper%E5%AE%89%E8%A3%850.96oled%E5%B1%8F%E5%B9%95/</link>
+    <pubDate>Mon, 01 Apr 2024 15:17:01 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/klipper%E5%AE%89%E8%A3%850.96oled%E5%B1%8F%E5%B9%95/</guid>
+    <description><![CDATA[前言 摘要 新组装的打印机可以通过局域网内浏览器进行控制打印， 但还是需要一块小屏幕展示打印进度，才不用每次都打开手机或者电脑才能查看。 之前用mk]]></description>
+</item>
+</channel>
+</rss>

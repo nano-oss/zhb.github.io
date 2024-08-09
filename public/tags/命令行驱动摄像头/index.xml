@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>命令行驱动摄像头 - 标签 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%A9%B1%E5%8A%A8%E6%91%84%E5%83%8F%E5%A4%B4/</link>
+        <description>命令行驱动摄像头 - 标签 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Wed, 28 Feb 2024 15:20:50 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%A9%B1%E5%8A%A8%E6%91%84%E5%83%8F%E5%A4%B4/" rel="self" type="application/rss+xml" /><item>
+    <title>树莓命令行自动拍照脚本</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%87%AA%E5%8A%A8%E6%8B%8D%E7%85%A7%E8%84%9A%E6%9C%AC/</link>
+    <pubDate>Wed, 28 Feb 2024 15:20:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%87%AA%E5%8A%A8%E6%8B%8D%E7%85%A7%E8%84%9A%E6%9C%AC/</guid>
+    <description><![CDATA[参考链接 引用 https://blog.csdn.net/weixin_42361175/article/details/117011888# https://blog.csdn.net/u012206617/article/details/118366597 脚本内容如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 #!/bin/bash echo &#34;Welcome !&#34; echo &#34;The program will start now !&#34; #sudo apt update &amp;&amp; sudo apt upgrade -y #sudo apt-get]]></description>
+</item>
+</channel>
+</rss>

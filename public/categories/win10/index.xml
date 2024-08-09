@@ -1,0 +1,40 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Win10 - 分类 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/categories/win10/</link>
+        <description>Win10 - 分类 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Sun, 03 Mar 2024 12:58:50 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/categories/win10/" rel="self" type="application/rss+xml" /><item>
+    <title>win10下edge浏览器打开网页报错： 不是安全连接</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/win10%E7%94%A8edge%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BAhts%E5%AE%89%E5%85%A8%E9%94%99%E8%AF%AF/</link>
+    <pubDate>Sun, 03 Mar 2024 12:58:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/win10%E7%94%A8edge%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BAhts%E5%AE%89%E5%85%A8%E9%94%99%E8%AF%AF/</guid>
+    <description><![CDATA[问题及解决 打开fontawesome.com时页面提示： 1 2 3 你的连接不是专用连接 NET::ERR_CERT_AUTHORITY_INVALID 你现在无法访问 fontawesome.com，因为网站使]]></description>
+</item>
+<item>
+    <title>win10下批量修改文件后缀</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/win10%E4%B8%8B%E6%89%B9%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/</link>
+    <pubDate>Tue, 20 Feb 2024 22:22:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/win10%E4%B8%8B%E6%89%B9%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/</guid>
+    <description><![CDATA[参考链接 引用 参考链接: https://zhuanlan.zhihu.com/p/649207787 操作步骤 在文件夹里面新建一个tx文本，点击打开txt文本，输入一小段代码： 1 ren *.txt *.md 以上代码意思就是将文件后缀名txt]]></description>
+</item>
+<item>
+    <title>win10下的WSL操作记录</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/win10%E4%B8%8B%E7%9A%84wsl%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
+    <pubDate>Tue, 06 Feb 2024 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/win10%E4%B8%8B%E7%9A%84wsl%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
+    <description><![CDATA[参考链接 引用 https://blog.csdn.net/weixin_43328157/article/details/129052041 https://learn.microsoft.com/zh-cn/windows/terminal/install https://learn.microsoft.com/zh-cn/windows/wsl/setup/environment#set-up-your-linux-username-and-password https://learn.microsoft.com/zh-cn/windows/wsl/install https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config wsl常用操作 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 wsl --update # 更新wsl内核 wsl --list --online # 更新wsl发行版列表 wsl --list --verbose # 列出已安装]]></description>
+</item>
+<item>
+    <title>win10查看连接过的wifi和密码</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/win10%E6%9F%A5%E7%9C%8B%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%9A%84wifi%E5%92%8C%E5%AF%86%E7%A0%81/</link>
+    <pubDate>Mon, 18 Dec 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/win10%E6%9F%A5%E7%9C%8B%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%9A%84wifi%E5%92%8C%E5%AF%86%E7%A0%81/</guid>
+    <description><![CDATA[常用操作 查看电脑连接过的WiFi密码： 使用win+r打开以管理员身份命令行 输入netsh wlan show profile name=&ldquo;WiFi名称&rdqu]]></description>
+</item>
+</channel>
+</rss>

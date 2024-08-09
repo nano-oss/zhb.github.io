@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Gitee - 分类 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/categories/gitee/</link>
+        <description>Gitee - 分类 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Wed, 01 Nov 2023 13:44:50 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/categories/gitee/" rel="self" type="application/rss+xml" /><item>
+    <title>Gitee简历制作网页搭建</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/gitee%E7%AE%80%E5%8E%86%E5%88%B6%E4%BD%9C%E7%BD%91%E9%A1%B5%E6%90%AD%E5%BB%BA/</link>
+    <pubDate>Wed, 01 Nov 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/gitee%E7%AE%80%E5%8E%86%E5%88%B6%E4%BD%9C%E7%BD%91%E9%A1%B5%E6%90%AD%E5%BB%BA/</guid>
+    <description><![CDATA[摘要 引用 markdown2pdf项目地址：https://gitee.com/codeleilei/markdown2pdf.git linu]]></description>
+</item>
+<item>
+    <title>Gitee使用记录</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/gitee%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
+    <pubDate>Fri, 20 Oct 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/gitee%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
+    <description><![CDATA[参考链接 引用 https://blog.csdn.net/m0_45234510/article/details/120181503 https://blog.csdn.net/m0_51411338/article/details/124380516 日常更新仓库命令 1 2 3 4 5 6 7 8 git status git add . git commit -m &#34;240112update&#34; git push -u origin &#34;master&#34; 或强制更新 git push --force origin master 拉取远程仓库、更新本地仓库到最新代码： git pull origin]]></description>
+</item>
+</channel>
+</rss>

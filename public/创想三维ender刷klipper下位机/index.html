@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>创想三维ender刷klipper下位机 - Bin&#39;s Blog</title><meta name="Description" content="路漫漫其修远兮，吾将上下而求索！"><meta property="og:title" content="创想三维ender刷klipper下位机" />
+<meta property="og:description" content="参考链接 引用 本文主要针对创想三维的ender3-v2-2020机型，主板型号4.4.2，主控GD32F303 其他ender3的型号可以参照以" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://naonano.gitee.io/zhb.gitee.io/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/" /><meta property="og:image" content="https://naonano.gitee.io/zhb.gitee.io/img/header.jpg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-27T20:55:11+08:00" />
+<meta property="article:modified_time" content="2024-03-27T20:55:11+08:00" /><meta property="og:site_name" content="Bin&#39;s Blog" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://naonano.gitee.io/zhb.gitee.io/img/header.jpg" /><meta name="twitter:title" content="创想三维ender刷klipper下位机"/>
+<meta name="twitter:description" content="参考链接 引用 本文主要针对创想三维的ender3-v2-2020机型，主板型号4.4.2，主控GD32F303 其他ender3的型号可以参照以"/>
+<meta name="application-name" content="Bin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Bin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://naonano.gitee.io/zhb.gitee.io/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/" /><link rel="prev" href="https://naonano.gitee.io/zhb.gitee.io/stm32f103%E7%82%B9%E7%81%AF/" /><link rel="next" href="https://naonano.gitee.io/zhb.gitee.io/klipper%E9%85%8D%E7%BD%AE%E7%BD%91%E5%BA%8A%E8%A1%A5%E5%81%BF%E5%AE%9E%E7%8E%B0%E5%AE%8C%E7%BE%8E%E9%A6%96%E5%B1%82%E6%89%93%E5%8D%B0/" /><link rel="stylesheet" href="/zhb.gitee.io/css/style.min.css"><link rel="preload" href="/zhb.gitee.io/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/zhb.gitee.io/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/zhb.gitee.io/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/zhb.gitee.io/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "创想三维ender刷klipper下位机",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/naonano.gitee.io\/zhb.gitee.io\/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA\/"
+        },"genre": "posts","keywords": "3d打印机","wordcount":  720 ,
+        "url": "https:\/\/naonano.gitee.io\/zhb.gitee.io\/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA\/","datePublished": "2024-03-27T20:55:11+08:00","dateModified": "2024-03-27T20:55:11+08:00","license": "本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Bin"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zhb.gitee.io/" title="Bin&#39;s Blog"><span class="header-title-pre"><i class="fa-solid fa-dragon" style="color: #744da9;"></i></span> Bin&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zhb.gitee.io/" title="首页"><i class="fa-solid fa-house" style="color: #744da9;"></i> 首页 </a><a class="menu-item" href="/zhb.gitee.io/posts/" title="全部文章"><i class="fa-solid fa-pen" style="color: #744da9;"></i> 全部文章-时间线 </a><a class="menu-item" href="/zhb.gitee.io/categories/" title="文章分类"><i class="fa-brands fa-typo3" style="color: #744da9;"></i> 文章分类 </a><a class="menu-item" href="/zhb.gitee.io/tags/" title="文章标签"><i class="fa-solid fa-tag" style="color: #744da9;"></i> 文章标签 </a><a class="menu-item" href="/zhb.gitee.io/download/" title="资源分享"><i class="fa-solid fa-share-nodes" style="color: #744da9;"></i> 资源分享 </a><a class="menu-item" href="/zhb.gitee.io/self/" title="个人简历"><i class="fa-solid fa-person-praying" style="color: #744da9;"></i> 个人简历 </a><a class="menu-item" href="/zhb.gitee.io/about/" title="关于"><i class="fa-solid fa-circle-info" style="color: #744da9;"></i> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="请输入关键词搜索" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zhb.gitee.io/" title="Bin&#39;s Blog"><span class="header-title-pre"><i class="fa-solid fa-dragon" style="color: #744da9;"></i></span> Bin&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="请输入关键词搜索" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zhb.gitee.io/" title="首页"><i class="fa-solid fa-house" style="color: #744da9;"></i>首页</a><a class="menu-item" href="/zhb.gitee.io/posts/" title="全部文章"><i class="fa-solid fa-pen" style="color: #744da9;"></i>全部文章-时间线</a><a class="menu-item" href="/zhb.gitee.io/categories/" title="文章分类"><i class="fa-brands fa-typo3" style="color: #744da9;"></i>文章分类</a><a class="menu-item" href="/zhb.gitee.io/tags/" title="文章标签"><i class="fa-solid fa-tag" style="color: #744da9;"></i>文章标签</a><a class="menu-item" href="/zhb.gitee.io/download/" title="资源分享"><i class="fa-solid fa-share-nodes" style="color: #744da9;"></i>资源分享</a><a class="menu-item" href="/zhb.gitee.io/self/" title="个人简历"><i class="fa-solid fa-person-praying" style="color: #744da9;"></i>个人简历</a><a class="menu-item" href="/zhb.gitee.io/about/" title="关于"><i class="fa-solid fa-circle-info" style="color: #744da9;"></i>关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">创想三维ender刷klipper下位机</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zhb.gitee.io/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Bin</a></span>&nbsp;<span class="post-category">收录于 <a href="/zhb.gitee.io/categories/ender3/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>ender3</a>&nbsp;<a href="/zhb.gitee.io/categories/3d%E6%89%93%E5%8D%B0%E6%9C%BA/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>3d打印机</a>&nbsp;<a href="/zhb.gitee.io/categories/klipper/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Klipper</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-27">2024-03-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 720 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#参考链接">参考链接</a></li>
+            <li><a href="#操作如下">操作如下</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="参考链接">参考链接</h3>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw" aria-hidden="true"></i>引用<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre><code>本文主要针对创想三维的ender3-v2-2020机型，主板型号4.4.2，主控GD32F303 
+其他ender3的型号可以参照以下链接进行烧写和配置：
+https://github.com/Klipper3d/klipper/blob/master/config
+</code></pre>
+</div>
+        </div>
+    </div>
+<br>
+<h3 id="操作如下">操作如下</h3>
+<ol>
+<li>准备一张内存卡，插到电脑</li>
+<li>用各种派或者玩客云当作上位机，在上位机上安装好klipper</li>
+</ol>
+<br>
+<ol start="3">
+<li>在上位机使用klipper编译下位机固件，GD32F303或STM32F103都可以使用以下编译参数：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="err">主控选择：</span> <span class="n">STM32F103</span>
+</span></span><span class="line"><span class="cl"><span class="err">寄存器选择：</span> <span class="s2">&#34;28KiB bootloader&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="err">串口通信方式选择：</span> <span class="n">serial</span> <span class="p">(</span><span class="n">on</span> <span class="n">USART1</span> <span class="n">PA10</span><span class="o">/</span><span class="n">PA9</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ol start="4">
+<li>将编译生成klipper.bin固件拷贝到内存卡中</li>
+<li>ender3断电，将内存卡插到ender3上，重新上电开机即可</li>
+<li>在浏览器登录klipper页面，配置printer.cfg如下：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span><span class="lnt">95
+</span><span class="lnt">96
+</span><span class="lnt">97
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># This file contains pin mappings for the stock 2020 Creality Ender 3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># V2. To use this config, during &#34;make menuconfig&#34; select the</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># STM32F103 with a &#34;28KiB bootloader&#34; and serial (on USART1 PA10/PA9)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># communication.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># If you prefer a direct serial connection, in &#34;make menuconfig&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># select &#34;Enable extra low-level configuration options&#34; and select</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># serial (on USART3 PB11/PB10), which is broken out on the 10 pin IDC</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># cable used for the LCD module as follows:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3: Tx, 4: Rx, 9: GND, 10: VCC</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Flash this firmware by copying &#34;out/klipper.bin&#34; to a SD card and</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># turning on the printer with the card inserted. The firmware</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># filename must end in &#34;.bin&#34; and must not match the last filename</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># that was flashed.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># See docs/Config_Reference.md for a description of parameters.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">include</span> <span class="n">fluidd</span><span class="o">.</span><span class="n">cfg</span><span class="p">]</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">mcu</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">serial</span><span class="p">:</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">serial</span><span class="o">/</span><span class="n">by</span><span class="o">-</span><span class="n">id</span><span class="o">/</span><span class="n">usb</span><span class="o">-</span><span class="mi">1</span><span class="n">a86_USB_Serial</span><span class="o">-</span><span class="n">if00</span><span class="o">-</span><span class="n">port0</span>
+</span></span><span class="line"><span class="cl"><span class="n">restart_method</span><span class="p">:</span> <span class="n">command</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">printer</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">kinematics</span><span class="p">:</span> <span class="n">cartesian</span>
+</span></span><span class="line"><span class="cl"><span class="n">max_velocity</span><span class="p">:</span> <span class="mi">300</span>
+</span></span><span class="line"><span class="cl"><span class="n">max_accel</span><span class="p">:</span> <span class="mi">3000</span>
+</span></span><span class="line"><span class="cl"><span class="n">max_z_velocity</span><span class="p">:</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="n">max_z_accel</span><span class="p">:</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">stepper_x</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">step_pin</span><span class="p">:</span> <span class="n">PC2</span>
+</span></span><span class="line"><span class="cl"><span class="n">dir_pin</span><span class="p">:</span> <span class="n">PB9</span>
+</span></span><span class="line"><span class="cl"><span class="n">enable_pin</span><span class="p">:</span> <span class="o">!</span><span class="n">PC3</span>
+</span></span><span class="line"><span class="cl"><span class="n">microsteps</span><span class="p">:</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="cl"><span class="n">rotation_distance</span><span class="p">:</span> <span class="mi">40</span>
+</span></span><span class="line"><span class="cl"><span class="n">endstop_pin</span><span class="p">:</span> <span class="o">^</span><span class="n">PA5</span>
+</span></span><span class="line"><span class="cl"><span class="n">position_endstop</span><span class="p">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">position_max</span><span class="p">:</span> <span class="mi">235</span>
+</span></span><span class="line"><span class="cl"><span class="n">homing_speed</span><span class="p">:</span> <span class="mi">50</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">stepper_y</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">step_pin</span><span class="p">:</span> <span class="n">PB8</span>
+</span></span><span class="line"><span class="cl"><span class="n">dir_pin</span><span class="p">:</span> <span class="n">PB7</span>
+</span></span><span class="line"><span class="cl"><span class="n">enable_pin</span><span class="p">:</span> <span class="o">!</span><span class="n">PC3</span>
+</span></span><span class="line"><span class="cl"><span class="n">microsteps</span><span class="p">:</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="cl"><span class="n">rotation_distance</span><span class="p">:</span> <span class="mi">40</span>
+</span></span><span class="line"><span class="cl"><span class="n">endstop_pin</span><span class="p">:</span> <span class="o">^</span><span class="n">PA6</span>
+</span></span><span class="line"><span class="cl"><span class="n">position_endstop</span><span class="p">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">position_max</span><span class="p">:</span> <span class="mi">235</span>
+</span></span><span class="line"><span class="cl"><span class="n">homing_speed</span><span class="p">:</span> <span class="mi">50</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">stepper_z</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">step_pin</span><span class="p">:</span> <span class="n">PB6</span>
+</span></span><span class="line"><span class="cl"><span class="n">dir_pin</span><span class="p">:</span> <span class="o">!</span><span class="n">PB5</span>
+</span></span><span class="line"><span class="cl"><span class="n">enable_pin</span><span class="p">:</span> <span class="o">!</span><span class="n">PC3</span>
+</span></span><span class="line"><span class="cl"><span class="n">microsteps</span><span class="p">:</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="cl"><span class="n">rotation_distance</span><span class="p">:</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="n">endstop_pin</span><span class="p">:</span> <span class="o">^</span><span class="n">PA7</span>
+</span></span><span class="line"><span class="cl"><span class="n">position_endstop</span><span class="p">:</span> <span class="mf">0.0</span>
+</span></span><span class="line"><span class="cl"><span class="n">position_max</span><span class="p">:</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">extruder</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">max_extrude_only_distance</span><span class="p">:</span> <span class="mf">100.0</span>
+</span></span><span class="line"><span class="cl"><span class="n">step_pin</span><span class="p">:</span> <span class="n">PB4</span>
+</span></span><span class="line"><span class="cl"><span class="n">dir_pin</span><span class="p">:</span> <span class="n">PB3</span>
+</span></span><span class="line"><span class="cl"><span class="n">enable_pin</span><span class="p">:</span> <span class="o">!</span><span class="n">PC3</span>
+</span></span><span class="line"><span class="cl"><span class="n">microsteps</span><span class="p">:</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="cl"><span class="n">rotation_distance</span><span class="p">:</span> <span class="mf">34.406</span>
+</span></span><span class="line"><span class="cl"><span class="n">nozzle_diameter</span><span class="p">:</span> <span class="mf">0.400</span>
+</span></span><span class="line"><span class="cl"><span class="n">filament_diameter</span><span class="p">:</span> <span class="mf">1.750</span>
+</span></span><span class="line"><span class="cl"><span class="n">heater_pin</span><span class="p">:</span> <span class="n">PA1</span>
+</span></span><span class="line"><span class="cl"><span class="n">sensor_type</span><span class="p">:</span> <span class="n">EPCOS</span> <span class="mi">100</span><span class="n">K</span> <span class="n">B57560G104F</span>
+</span></span><span class="line"><span class="cl"><span class="n">sensor_pin</span><span class="p">:</span> <span class="n">PC5</span>
+</span></span><span class="line"><span class="cl"><span class="n">control</span><span class="p">:</span> <span class="n">pid</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># tuned for stock hardware with 200 degree Celsius target</span>
+</span></span><span class="line"><span class="cl"><span class="n">pid_Kp</span><span class="p">:</span> <span class="mf">21.527</span>
+</span></span><span class="line"><span class="cl"><span class="n">pid_Ki</span><span class="p">:</span> <span class="mf">1.063</span>
+</span></span><span class="line"><span class="cl"><span class="n">pid_Kd</span><span class="p">:</span> <span class="mf">108.982</span>
+</span></span><span class="line"><span class="cl"><span class="n">min_temp</span><span class="p">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">max_temp</span><span class="p">:</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">heater_bed</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">heater_pin</span><span class="p">:</span> <span class="n">PA2</span>
+</span></span><span class="line"><span class="cl"><span class="n">sensor_type</span><span class="p">:</span> <span class="n">EPCOS</span> <span class="mi">100</span><span class="n">K</span> <span class="n">B57560G104F</span>
+</span></span><span class="line"><span class="cl"><span class="n">sensor_pin</span><span class="p">:</span> <span class="n">PC4</span>
+</span></span><span class="line"><span class="cl"><span class="n">control</span><span class="p">:</span> <span class="n">pid</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># tuned for stock hardware with 50 degree Celsius target</span>
+</span></span><span class="line"><span class="cl"><span class="n">pid_Kp</span><span class="p">:</span> <span class="mf">54.027</span>
+</span></span><span class="line"><span class="cl"><span class="n">pid_Ki</span><span class="p">:</span> <span class="mf">0.770</span>
+</span></span><span class="line"><span class="cl"><span class="n">pid_Kd</span><span class="p">:</span> <span class="mf">948.182</span>
+</span></span><span class="line"><span class="cl"><span class="n">min_temp</span><span class="p">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">max_temp</span><span class="p">:</span> <span class="mi">130</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">fan</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">pin</span><span class="p">:</span> <span class="n">PA0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ol start="7">
+<li>配置修改参数即可使用，注意，刷了klipper之后原厂的屏幕就用不了了</li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-03-27</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://naonano.gitee.io/zhb.gitee.io/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/" data-title="创想三维ender刷klipper下位机" data-hashtags="3d打印机"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://naonano.gitee.io/zhb.gitee.io/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/" data-hashtag="3d打印机"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://naonano.gitee.io/zhb.gitee.io/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://naonano.gitee.io/zhb.gitee.io/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/" data-title="创想三维ender刷klipper下位机"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://naonano.gitee.io/zhb.gitee.io/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/" data-title="创想三维ender刷klipper下位机" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://naonano.gitee.io/zhb.gitee.io/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/" data-title="创想三维ender刷klipper下位机"><i data-svg-src="/zhb.gitee.io/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zhb.gitee.io/tags/3d%E6%89%93%E5%8D%B0%E6%9C%BA/">3d打印机</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zhb.gitee.io/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zhb.gitee.io/stm32f103%E7%82%B9%E7%81%AF/" class="prev" rel="prev" title="STM32F103点灯"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>STM32F103点灯</a>
+            <a href="/zhb.gitee.io/klipper%E9%85%8D%E7%BD%AE%E7%BD%91%E5%BA%8A%E8%A1%A5%E5%81%BF%E5%AE%9E%E7%8E%B0%E5%AE%8C%E7%BE%8E%E9%A6%96%E5%B1%82%E6%89%93%E5%8D%B0/" class="next" rel="next" title="Klipper配置网床补偿实现完美首层打印">Klipper配置网床补偿实现完美首层打印<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by Bin | A Crazy Man</div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2000 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zhb.gitee.io/" target="_blank">BinByZhang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/zhb.gitee.io/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/zhb.gitee.io/lib/katex/katex.min.css"><script type="text/javascript" src="/zhb.gitee.io/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/katex.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOLVvab84CdYy9","darkTheme":"dark","emitMetadata":"0","inputPosition":"top","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"nano-oss/zhb.io","repoId":"R_kgDOLVvabw"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"7R13ZBU6BQ","algoliaIndex":"zhb.gitee.io","algoliaSearchKey":"abb3e8f6730db0b511261fc3a0f5e8d5","highlightTag":"em","maxResultLength":12,"noResultsFound":"没有找到结果","snippetLength":100,"type":"algolia"}};</script><script type="text/javascript" src="/zhb.gitee.io/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript" src="/js/custom.js"></script></body>
+</html>
+
+

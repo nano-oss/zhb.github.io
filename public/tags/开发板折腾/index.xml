@@ -1,0 +1,48 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>开发板折腾 - 标签 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/tags/%E5%BC%80%E5%8F%91%E6%9D%BF%E6%8A%98%E8%85%BE/</link>
+        <description>开发板折腾 - 标签 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Mon, 04 Mar 2024 22:48:56 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/tags/%E5%BC%80%E5%8F%91%E6%9D%BF%E6%8A%98%E8%85%BE/" rel="self" type="application/rss+xml" /><item>
+    <title>树莓派安装西门子snap7库</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85%E8%A5%BF%E9%97%A8%E5%AD%90snap7%E5%BA%93/</link>
+    <pubDate>Mon, 04 Mar 2024 22:48:56 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85%E8%A5%BF%E9%97%A8%E5%AD%90snap7%E5%BA%93/</guid>
+    <description><![CDATA[参考链接 引用 https://blog.csdn.net/zncg24/article/details/135693776 操作步骤 下载这个压缩包放到树莓派上： 1 https://sourceforge.net/projects/snap7/files/Snap7-IoT/snap7-iot-arm/ 在树莓派上执行： 1 2 3 tar -xvzf snap7-iot-arm-1.4.2.tar.gz cd snap7-iot-arm-1.4.2/build/unix sudo make -f arm_v7_x64_linux.mk install 编译成功，实测可以引用成功libsnap7.]]></description>
+</item>
+<item>
+    <title>树莓派fswebcam命令行控制usb摄像头拍照</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BEfswebcam%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6usb%E6%91%84%E5%83%8F%E5%A4%B4%E6%8B%8D%E7%85%A7/</link>
+    <pubDate>Fri, 01 Mar 2024 15:58:26 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BEfswebcam%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6usb%E6%91%84%E5%83%8F%E5%A4%B4%E6%8B%8D%E7%85%A7/</guid>
+    <description><![CDATA[参考链接 引用 https://blog.csdn.net/weixin_42361175/article/details/117011888# 操作步骤 1 2 3 4 5 6 7 8 9 10 sudo apt update sudo apt upgrade sudo apt-get install fswebcam sudo fswebcam -r 720x640 --jpeg 85 -D 1 web-cam-shot.jpg sudo fswebcam -d /dev/video2 --no-banner -r 1280x720 test/test.jpg 或 sudo fswebcam -d /dev/video0 -r 720x640 --jpeg 85 -D 1 web-cam-shot.jpg -d代表指定哪个设备]]></description>
+</item>
+<item>
+    <title>树莓派centos找不到wlan0网卡解决方法</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BEcentos%E6%89%BE%E4%B8%8D%E5%88%B0wlan0%E7%BD%91%E5%8D%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+    <pubDate>Fri, 29 Dec 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BEcentos%E6%89%BE%E4%B8%8D%E5%88%B0wlan0%E7%BD%91%E5%8D%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+    <description><![CDATA[操作步骤 在以下路径：/usr/lib/firmwear/brcm/ 用一张新的内存卡烧录同样的镜像文件，插到树莓派运行 进入路径：/usr/li]]></description>
+</item>
+<item>
+    <title>树莓派操作指南1</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%971/</link>
+    <pubDate>Sun, 20 Nov 2022 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%971/</guid>
+    <description><![CDATA[相关操作记录 树莓派卸载原生桌面： 1 2 3 4 5 sudo apt-get install deborphan sudo apt-get autoremove --purge libx11-.* lxde-.* raspberrypi-artwork xkb-data omxplayer penguinspuzzle sgml-base xml-core alsa-.* cifs-.* samba-.* fonts-.* desktop-* gnome-.* sudo apt-get autoremove --purge $(deborphan) sudo apt-get autoremove --purge sudo apt-get autoclean 树莓派换源： 仅需要打开/etc]]></description>
+</item>
+<item>
+    <title>树莓派声卡配置参数备份</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A3%B0%E5%8D%A1%E9%85%8D%E7%BD%AE/</link>
+    <pubDate>Tue, 20 Sep 2022 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A3%B0%E5%8D%A1%E9%85%8D%E7%BD%AE/</guid>
+    <description><![CDATA[备份参数 1 2 3 4 5 6 7 8 9 10 11 12 13 pcm.!default { type asym playback.pcm { type plug slave.pcm &#34;hw:0,0&#34; } capture.pcm { type plug slave.pcm &#34;hw:1,0&#34; } 其中，hw:1,0表示card 1 device 0 plughw:2,0]]></description>
+</item>
+</channel>
+</rss>

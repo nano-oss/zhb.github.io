@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>嵌入式笔试问题汇总 - Bin&#39;s Blog</title><meta name="Description" content="路漫漫其修远兮，吾将上下而求索！"><meta property="og:title" content="嵌入式笔试问题汇总" />
+<meta property="og:description" content="参考链接 引用 https://blog.csdn.net/yilongdashi/article/details/91352651 https://blog.csdn.net/zmlcool/article/details/6730973 https://blog.csdn.net/m0_75266675/article/details/134224558 https://blog.csdn.net/xianming_flag/article/details/110401128 https://blog.csdn.net/shaguahaha/article/details/70766665 https://blog.csdn.net/as480133937/article/details/105764119 https://blog.csdn.net/qq_45722156/article/details/116332826 https://zhuanlan.zhihu.com/p/162708070 https://blog.csdn.net/GG_Bruse/article/details/124360771 问题点记录 波特率115200每秒传多少字节 1GB=1024MB 1MB=1024KB 1KB=1024B（字节) 波特率115200 ＝ 115200 (位/秒) 如果没" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://naonano.gitee.io/zhb.gitee.io/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" /><meta property="og:image" content="https://naonano.gitee.io/zhb.gitee.io/img/header.jpg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-03T19:45:48+08:00" />
+<meta property="article:modified_time" content="2024-03-03T19:45:48+08:00" /><meta property="og:site_name" content="Bin&#39;s Blog" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://naonano.gitee.io/zhb.gitee.io/img/header.jpg" /><meta name="twitter:title" content="嵌入式笔试问题汇总"/>
+<meta name="twitter:description" content="参考链接 引用 https://blog.csdn.net/yilongdashi/article/details/91352651 https://blog.csdn.net/zmlcool/article/details/6730973 https://blog.csdn.net/m0_75266675/article/details/134224558 https://blog.csdn.net/xianming_flag/article/details/110401128 https://blog.csdn.net/shaguahaha/article/details/70766665 https://blog.csdn.net/as480133937/article/details/105764119 https://blog.csdn.net/qq_45722156/article/details/116332826 https://zhuanlan.zhihu.com/p/162708070 https://blog.csdn.net/GG_Bruse/article/details/124360771 问题点记录 波特率115200每秒传多少字节 1GB=1024MB 1MB=1024KB 1KB=1024B（字节) 波特率115200 ＝ 115200 (位/秒) 如果没"/>
+<meta name="application-name" content="Bin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Bin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://naonano.gitee.io/zhb.gitee.io/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" /><link rel="prev" href="https://naonano.gitee.io/zhb.gitee.io/win10%E7%94%A8edge%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BAhts%E5%AE%89%E5%85%A8%E9%94%99%E8%AF%AF/" /><link rel="next" href="https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85%E8%A5%BF%E9%97%A8%E5%AD%90snap7%E5%BA%93/" /><link rel="stylesheet" href="/zhb.gitee.io/css/style.min.css"><link rel="preload" href="/zhb.gitee.io/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/zhb.gitee.io/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/zhb.gitee.io/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/zhb.gitee.io/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "嵌入式笔试问题汇总",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/naonano.gitee.io\/zhb.gitee.io\/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB\/"
+        },"genre": "posts","keywords": "嵌入式笔试, C语言","wordcount":  4372 ,
+        "url": "https:\/\/naonano.gitee.io\/zhb.gitee.io\/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB\/","datePublished": "2024-03-03T19:45:48+08:00","dateModified": "2024-03-03T19:45:48+08:00","license": "本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Bin"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zhb.gitee.io/" title="Bin&#39;s Blog"><span class="header-title-pre"><i class="fa-solid fa-dragon" style="color: #744da9;"></i></span> Bin&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zhb.gitee.io/" title="首页"><i class="fa-solid fa-house" style="color: #744da9;"></i> 首页 </a><a class="menu-item" href="/zhb.gitee.io/posts/" title="全部文章"><i class="fa-solid fa-pen" style="color: #744da9;"></i> 全部文章-时间线 </a><a class="menu-item" href="/zhb.gitee.io/categories/" title="文章分类"><i class="fa-brands fa-typo3" style="color: #744da9;"></i> 文章分类 </a><a class="menu-item" href="/zhb.gitee.io/tags/" title="文章标签"><i class="fa-solid fa-tag" style="color: #744da9;"></i> 文章标签 </a><a class="menu-item" href="/zhb.gitee.io/download/" title="资源分享"><i class="fa-solid fa-share-nodes" style="color: #744da9;"></i> 资源分享 </a><a class="menu-item" href="/zhb.gitee.io/self/" title="个人简历"><i class="fa-solid fa-person-praying" style="color: #744da9;"></i> 个人简历 </a><a class="menu-item" href="/zhb.gitee.io/about/" title="关于"><i class="fa-solid fa-circle-info" style="color: #744da9;"></i> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="请输入关键词搜索" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zhb.gitee.io/" title="Bin&#39;s Blog"><span class="header-title-pre"><i class="fa-solid fa-dragon" style="color: #744da9;"></i></span> Bin&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="请输入关键词搜索" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zhb.gitee.io/" title="首页"><i class="fa-solid fa-house" style="color: #744da9;"></i>首页</a><a class="menu-item" href="/zhb.gitee.io/posts/" title="全部文章"><i class="fa-solid fa-pen" style="color: #744da9;"></i>全部文章-时间线</a><a class="menu-item" href="/zhb.gitee.io/categories/" title="文章分类"><i class="fa-brands fa-typo3" style="color: #744da9;"></i>文章分类</a><a class="menu-item" href="/zhb.gitee.io/tags/" title="文章标签"><i class="fa-solid fa-tag" style="color: #744da9;"></i>文章标签</a><a class="menu-item" href="/zhb.gitee.io/download/" title="资源分享"><i class="fa-solid fa-share-nodes" style="color: #744da9;"></i>资源分享</a><a class="menu-item" href="/zhb.gitee.io/self/" title="个人简历"><i class="fa-solid fa-person-praying" style="color: #744da9;"></i>个人简历</a><a class="menu-item" href="/zhb.gitee.io/about/" title="关于"><i class="fa-solid fa-circle-info" style="color: #744da9;"></i>关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">嵌入式笔试问题汇总</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zhb.gitee.io/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Bin</a></span>&nbsp;<span class="post-category">收录于 <a href="/zhb.gitee.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%9F%A5%E8%AF%86%E7%82%B9/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>嵌入式知识点</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-03">2024-03-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 4372 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 9 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#参考链接">参考链接</a></li>
+            <li><a href="#问题点记录">问题点记录</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="参考链接">参考链接</h3>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw" aria-hidden="true"></i>引用<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre><code>https://blog.csdn.net/yilongdashi/article/details/91352651
+https://blog.csdn.net/zmlcool/article/details/6730973
+https://blog.csdn.net/m0_75266675/article/details/134224558
+https://blog.csdn.net/xianming_flag/article/details/110401128
+https://blog.csdn.net/shaguahaha/article/details/70766665
+https://blog.csdn.net/as480133937/article/details/105764119
+https://blog.csdn.net/qq_45722156/article/details/116332826
+https://zhuanlan.zhihu.com/p/162708070
+https://blog.csdn.net/GG_Bruse/article/details/124360771
+</code></pre>
+</div>
+        </div>
+    </div>
+<br>
+<h3 id="问题点记录">问题点记录</h3>
+<ul>
+<li>波特率115200每秒传多少字节</li>
+</ul>
+<blockquote>
+<p>1GB=1024MB  1MB=1024KB  1KB=1024B（字节) <br>
+波特率115200 ＝ 115200 (位/秒)</p>
+</blockquote>
+<p>如果没有校验位，就应该除以 10(因为一个字节8位，1位起始位，1位停止位，如果有奇偶校验，还要算上1位校验位)，得到的是每秒字节数：  <br>
+波特率115200 ＝ 115200 (位/秒) ＝ 11520 (字节/秒)</p>
+<p>再除以 1024，就是每秒 KB 数：  <br>
+波特率115200 ＝ 115200 (位/秒) ＝ 11.25 (KB/秒)也就是满足每秒可以接收<code>512字节</code></p>
+<br>
+<ul>
+<li>C语言各个类型长度
+<table>
+<thead>
+<tr>
+<th>类型名(type)</th>
+<th>字节数(bytes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>2</td>
+</tr>
+<tr>
+<td>signed char 或 unsigned char</td>
+<td>1</td>
+</tr>
+<tr>
+<td>short int 或 short</td>
+<td>2</td>
+</tr>
+<tr>
+<td>long int 或 long</td>
+<td>4</td>
+</tr>
+<tr>
+<td>long long int 或 long long</td>
+<td>8</td>
+</tr>
+<tr>
+<td>unsigned short int 或 unsigned short</td>
+<td>2</td>
+</tr>
+<tr>
+<td>unsigned int</td>
+<td>4</td>
+</tr>
+<tr>
+<td>unsigned long int 或 unsigned long</td>
+<td>4</td>
+</tr>
+<tr>
+<td>unsigned long long int 或 unsigned long long</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<br>
+<ul>
+<li>宏定义一个变量u16获取一个数的高八位和低八位</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#define  u16_LO(xxx)  ((byte) ((u16)(xxx) &amp; 255))
+</span></span><span class="line"><span class="cl">#define  u16_HI(xxx)  ((byte) ((u16)(xxx) &gt;&gt; 8))
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ul>
+<li>判断年份是不是闰年</li>
+</ul>
+<blockquote>
+<p>闰年是指在公历（格里高利历）中，年份可以被4整除但不能被100整除的年份，或者可以被400整除的年份 <br>
+年份能被4整除，但不能被100整除的是闰年（例如2008年，2012年）； <br>
+年份能被400整除的也是闰年（例如2000年）； <br>
+年份能被100整除但不能被400整除的不是闰年（例如1900年不是闰年） <br></p>
+</blockquote>
+<p>代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;  //引用头文件</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">printf</span><span class="p">(</span><span class="s">&#34;请输入一个年份 ：&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">((</span><span class="n">i</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">||</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//能整除4且不能整除100 或能整除400
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d年是闰年</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">printf</span><span class="p">(</span><span class="s">&#34;不是闰年</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ul>
+<li>C语言冒泡算法</li>
+</ul>
+<blockquote>
+<p>其实很好理解的，就是for循环的嵌套，尤其是理解每一层循环的意思</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;	</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">25</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">79</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">62</span> <span class="p">};</span><span class="c1">//定义一个大小为10的数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//外层循环是比较的轮数，数组内有10个数，那么就应该比较10-1=9轮
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">9</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//内层循环比较的是当前一轮的比较次数，例如：第一轮比较9-1=8次，第二轮比较9-2=7次
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//相邻两个数如果逆序，则交换位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">temp</span> <span class="o">=</span> <span class="n">n</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">				<span class="n">n</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">				<span class="n">n</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">printf</span><span class="p">(</span><span class="s">&#34;排序过后的数顺序:</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%-4d&#34;</span><span class="p">,</span> <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ul>
+<li>I2C协议及操作(两线式串行总线)</li>
+</ul>
+<blockquote>
+<ul>
+<li>I2C总线具有两根双向信号线，一根是数据线SDA，另一根是时钟线SCL <br></li>
+<li>IIC总线上可以挂很多设备：多个主设备，多个从设备（外围 设备） <br></li>
+<li>多主机会产生总线裁决问题。当多个主机同时想占用总线时，企图启动总线传输数据，就叫做总线竞争。I2C通过总线仲裁，以决定哪台主机控制总线 <br></li>
+<li>上拉电阻一般在4.7k~10k之间 <br></li>
+<li>每个接到I2C总线上的器件都有唯一的地址。主机与其它器件间的数据传输可以是由主机发送数据到其它器件，这时主机 即为发送器，总线上收数据的器件则为接收器 <br></li>
+<li>起始与终止信号: SCL高电平； SDA由高到低，起始信号； SDA由低到高，起始信号 <br></li>
+<li>起始信号和终止信号都是由主机发送的。在起始信号产生之后，总线就处于被占用的状态，在终止信号产生之后，总线就处于空闲状态 <br></li>
+<li>接收端通过拉低SDA数据线，给发送端发送一个应答信号，以提醒发送端我这边已经接受完成，数据可以继续传输，接下来，发送端就可以继续发送数据了 <br></li>
+<li>字节传送： MSB高位先传输，总共8位长度。 每个字节必须跟一位应答位，即一帧9位 <br></li>
+</ul>
+</blockquote>
+<br>
+<ul>
+<li>stm32的GPIO配置流程</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. 定义GPIO引脚的结构体变量
+</span></span><span class="line"><span class="cl">GPIO_InitTypeDef GPIO_InitStructure;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2. 配置引脚的速度（可以配置你用到的多个引脚）,也就是配置引脚时钟
+</span></span><span class="line"><span class="cl">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3. 初始化结构体的变量，详情见下面（对结构体的详细理解）
+</span></span><span class="line"><span class="cl">	（1）引脚
+</span></span><span class="line"><span class="cl">	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;
+</span></span><span class="line"><span class="cl">	如果不是只用5号引脚，可以将GPIO_Pin_5改成GPIO_Pin_All
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	（2）速度
+</span></span><span class="line"><span class="cl">	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	（3）模式
+</span></span><span class="line"><span class="cl">	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;//推挽模式 既可以0 又可以1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">4. 初始化对应的端口
+</span></span><span class="line"><span class="cl">GPIO_Init(GPIOC, &amp;GPIO_InitStructure);
+</span></span><span class="line"><span class="cl">GPIO_Init(GPIOE, &amp;GPIO_InitStructure);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ul>
+<li>SPI协议及操作(串行高速总线)</li>
+</ul>
+<blockquote>
+<ul>
+<li>提供时钟的为主设备（Master），接收时钟的设备为从设备（Slave），SPI接口的读写操作，都是由主设备发起。当存在多个从设备时，通过各自的片选信号进行管理 <br></li>
+<li>SPI是全双工且SPI没有定义速度限制，一般的实现通常能达到甚至超过10 Mbps <br></li>
+<li>SPI接口一般使用四条信号线通信： <br>
+SDI（数据输入），SDO（数据输出），SCK（时钟），CS（片选）<br>
+MISO： 主设备输入/从设备输出引脚。该引脚在从模式下发送数据，在主模式下接收数据。 <br>
+MOSI： 主设备输出/从设备输入引脚。该引脚在主模式下发送数据，在从模式下接收数据。 <br>
+SCLK： 串行时钟信号，由主设备产生。 <br>
+CS/SS：从设备片选信号，由主设备控制。它的功能是用来作为“片选引脚”，也就是选择指定的从设备，让主设备可以单独地与特定从设备通讯，避免数据线上的冲突。 <br>
+<br></li>
+<li>SPI是<code>单主设备（ single-master ）</code>通信协议，这意味着总线中的只有一支中心设备能发起通信。当SPI主设备想读/写<code>从设备</code>时，它首先拉低<code>从设备</code>对应的SS线（SS是低电平有效），接着开始发送工作脉冲到时钟线上，在相应的脉冲时间上，<code>主设备</code>把信号发到MOSI实现“写”，同时可对MISO采样而实现“读” <br>
+<br></li>
+<li>STM32中SPI初始化配置:
+1.初始化GPIO口，配置相关引脚的复用功能，使能SPIx时钟。调用函数：void GPIO_Init()；
+2.使能SPI时钟总线:RCC_APB2PeriphClockCmd(RCC_APB2Periph_SPI1,ENABLE)
+3.配置SPI初始化的参数，设置SPI工作模式:SPI_Init(SPI1,&amp;SPI_Initstructure)
+4.使能SPI外设：SPI_Cmd(SPI1,ENABLE);
+<br></li>
+</ul>
+</blockquote>
+<br>
+<p>spi的配置参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">typedef struct
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">uint16_t SPI_Direction; /*!&lt; 传输方向，两向全双工，单向接收等*/
+</span></span><span class="line"><span class="cl">uint16_t SPI_Mode; /*!&lt; 模式选择，确定主机还是从机 */
+</span></span><span class="line"><span class="cl">uint16_t SPI_DataSize; /*!&lt; 数据大小，8位还是16位 */
+</span></span><span class="line"><span class="cl">uint16_t SPI_CPOL; /*!&lt; 时钟极性选择 */
+</span></span><span class="line"><span class="cl">uint16_t SPI_CPHA; /*!&lt; 时钟相位选择 */
+</span></span><span class="line"><span class="cl">uint16_t SPI_NSS; /*!&lt; 片选是硬件还是软件*/
+</span></span><span class="line"><span class="cl">uint16_t SPI_BaudRatePrescaler; /*!&lt; 分频系数 */
+</span></span><span class="line"><span class="cl">uint16_t SPI_FirstBit; /*!&lt; 指定数据传输是从MSB还是LSB位开始的。M
+</span></span><span class="line"><span class="cl">SB就是二进制第一位，LSB就是最后一位 */
+</span></span><span class="line"><span class="cl">uint16_t SPI_CRCPolynomial; /*!&lt; CRC校验 ，设置 CRC 校验多项式，提高通
+</span></span><span class="line"><span class="cl">信可靠性，大于 1 即可*/
+</span></span><span class="line"><span class="cl">}SPI_InitTypeDef;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<p>spi的初始化函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">void SPI2_Init(void)
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl"> 	GPIO_InitTypeDef GPIO_InitStructure;
+</span></span><span class="line"><span class="cl">  SPI_InitTypeDef  SPI_InitStructure;
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">	RCC_APB2PeriphClockCmd(	RCC_APB2Periph_GPIOB, ENABLE );//PORTB时钟使能 
+</span></span><span class="line"><span class="cl">	RCC_APB1PeriphClockCmd(	RCC_APB1Periph_SPI2,  ENABLE );//SPI2时钟使能 	
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+</span></span><span class="line"><span class="cl">	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;  //PB13/14/15复用推挽输出 
+</span></span><span class="line"><span class="cl">	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+</span></span><span class="line"><span class="cl">	GPIO_Init(GPIOB, &amp;GPIO_InitStructure);//初始化GPIOB
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"> 	GPIO_SetBits(GPIOB,GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15);  //PB13/14/15上拉
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">	SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;  //设置SPI单向或者双向的数据模式:SPI设置为双线双向全双工
+</span></span><span class="line"><span class="cl">	SPI_InitStructure.SPI_Mode = SPI_Mode_Master;		//设置SPI工作模式:设置为主SPI
+</span></span><span class="line"><span class="cl">	SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;		//设置SPI的数据大小:SPI发送接收8位帧结构
+</span></span><span class="line"><span class="cl">	SPI_InitStructure.SPI_CPOL = SPI_CPOL_High;		//串行同步时钟的空闲状态为高电平
+</span></span><span class="line"><span class="cl">	SPI_InitStructure.SPI_CPHA = SPI_CPHA_2Edge;	//串行同步时钟的第二个跳变沿（上升或下降）数据被采样
+</span></span><span class="line"><span class="cl">	SPI_InitStructure.SPI_NSS = SPI_NSS_Soft;		//NSS信号由硬件（NSS管脚）还是软件（使用SSI位）管理:内部NSS信号有SSI位控制
+</span></span><span class="line"><span class="cl">	SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_256;		//定义波特率预分频的值:波特率预分频值为256
+</span></span><span class="line"><span class="cl">	SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;	//指定数据传输从MSB位还是LSB位开始:数据传输从MSB位开始
+</span></span><span class="line"><span class="cl">	SPI_InitStructure.SPI_CRCPolynomial = 7;	//CRC值计算的多项式
+</span></span><span class="line"><span class="cl">	SPI_Init(SPI2, &amp;SPI_InitStructure);  //根据SPI_InitStruct中指定的参数初始化外设SPIx寄存器
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">	SPI_Cmd(SPI2, ENABLE); //使能SPI外设
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	SPI2_ReadWriteByte(0xff);//启动传输		 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">} 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<p>spi的发送函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">标准库：
+</span></span><span class="line"><span class="cl">u8 SPIx_ReadWriteByte(u8 TxData)
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">    u8 retry=0;
+</span></span><span class="line"><span class="cl">    while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET)
+</span></span><span class="line"><span class="cl">    {
+</span></span><span class="line"><span class="cl">    }//等待发送区空
+</span></span><span class="line"><span class="cl">    SPI_I2S_SendData(SPI2, TxData); //通过外设SPIx发送一个byte 数据
+</span></span><span class="line"><span class="cl">    while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET)
+</span></span><span class="line"><span class="cl">    {
+</span></span><span class="line"><span class="cl">    } //等待接收完一个byte
+</span></span><span class="line"><span class="cl">    return SPI_I2S_ReceiveData(SPI2); //返回通过SPIx最近接收的数据
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">HLA库：
+</span></span><span class="line"><span class="cl">uint8_t SPI_SendByte(uint8_t byte)
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">    uint8_t d_read,d_send=byte;
+</span></span><span class="line"><span class="cl">    if(HAL_SPI_TransmitReceive(&amp;hspi1,&amp;d_send,&amp;d_read,1,0xFFFFFF)!=HAL_OK)
+</span></span><span class="line"><span class="cl">    d_read=0XFF;
+</span></span><span class="line"><span class="cl">    return d_read;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ul>
+<li>CAN协议及操作 <br>
+CAN总线是一种用于在不同的ECU（电子控制单元）之间传输数据的线，CAN总线协议是一种ISO 国际标准化的串行通信协议，有 ISO-11898 和 ISO-11519两个系列。其定义有：
+<ul>
+<li>ISO-11898 定义了通信速率为 125 kbps ~1Mbps 的高速 CAN 通信标准，属于闭环总线，传输速率可达1Mbps，总线长度 ≤ 40米</li>
+<li>ISO11519 定义了通信速率为 10～125 kbps 的低速 CAN 通信标准，属于开环总线，传输速率为40kbps时，总线长度可达1000米</li>
+<li>通过CAN_H和CAN_L线上的电位差来表示CAN信号，分为显性电平(dominant)和隐性电平(recessive)两种类型。其中显性电平规定为逻辑0，隐性电平则为逻辑1</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul>
+<li>寄存器、缓存、内存之间的区别</li>
+</ul>
+<blockquote>
+<p>寄存器（register）是CPU（中央处理器）的组成部分，是一种直接整合到cpu中的有限的高速访问速度的存储器，它是有一些与非门组合组成的，分为通用寄存器和特殊寄存器。cpu访问寄存器的速度是最快的。那为什么我们不把数据都存储到寄存器中呢，因为寄存器是一种容量有限的存储器，并且非常小。因此只把一些计算机的指令等一些计算机频繁用到的数据存储在其中，来提高计算机的运行速度。 <br></p>
+</blockquote>
+<blockquote>
+<p>缓存就是数据交换的缓冲区（称作Cache），当某一硬件要读取数据时，会首先从缓存中查找需要的数据，如果找到了则直接执行，找不到的话则从内存中找。由于缓存的运行速度比内存快得多，故缓存的作用就是帮助硬件更快地运行。 <br></p>
+</blockquote>
+<p>因为缓存往往使用的是RAM（断电即掉的非永久储存），所以在用完后还是会把文件送到硬盘等存储器里永久存储。电脑里最大的缓存就是内存条了，最快的是CPU上镶的L1和L2缓存，显卡的显存是给显卡运算芯片用的缓存，硬盘上也有16M或者32M的缓存。 <br>
+CACHE是在CPU中速度非常块，而容量却很小的一种存储器，它是计算机存储器中最强悍的存储器。由于技术限制，容量很难提升。 <br></p>
+<blockquote>
+<p>寄存器和缓存的区别 <br>
+按与CPU远近来分，离得最近的是寄存器，然后缓存，最后内存。所以，寄存器是最贴近CPU的，而且CPU只与寄存器中进行存取。寄存器从内存中读取数据，但由于寄存器和内存读取速度相差太大，所以有了缓存。 <br>
+ROM在系统停止供电的时候仍然可以保持数据，而RAM通常都是在掉电之后就丢失数据，典型的RAM就是计算机的内存。 <br></p>
+</blockquote>
+<br>
+<ul>
+<li>Linux中查找某个格式的文件</li>
+</ul>
+<blockquote>
+<p>主要使用find或grep命令 <br>
+find命令：</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 例如查找后缀.c的文件，在home目录中
+</span></span><span class="line"><span class="cl">find /home -name &#34;*.c&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 类型：
+</span></span><span class="line"><span class="cl">	普通文件f 
+</span></span><span class="line"><span class="cl">	目录d 
+</span></span><span class="line"><span class="cl">	符号链接l 
+</span></span><span class="line"><span class="cl">	块设备文件b 
+</span></span><span class="line"><span class="cl">	字符设备文件c 
+</span></span><span class="line"><span class="cl">	socket文件s 
+</span></span><span class="line"><span class="cl">	管道文件p
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">find 路径 -type 类型
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<p>grep命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">grep 参数 &#34;内容&#34; 查找目录或文件
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 参数：
+</span></span><span class="line"><span class="cl">-r 若是目录，则可以递归查找
+</span></span><span class="line"><span class="cl">-n:可以显示该查找内容所在的行号
+</span></span><span class="line"><span class="cl">-i:可以忽略大小写进行查找
+</span></span><span class="line"><span class="cl">-v:不显示含有某字符串
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<p>一般是grep和find命令结合使用： <br>
+先使用find命令查找文件，然后使用grep命令查找哪些文件包含某个字符串</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">find ./ -name &#34;*.cpp&#34; | xargs grep -n &#34;main&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-03-03</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://naonano.gitee.io/zhb.gitee.io/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" data-title="嵌入式笔试问题汇总" data-hashtags="嵌入式笔试,C语言"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://naonano.gitee.io/zhb.gitee.io/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" data-hashtag="嵌入式笔试"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://naonano.gitee.io/zhb.gitee.io/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://naonano.gitee.io/zhb.gitee.io/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" data-title="嵌入式笔试问题汇总"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://naonano.gitee.io/zhb.gitee.io/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" data-title="嵌入式笔试问题汇总" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://naonano.gitee.io/zhb.gitee.io/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" data-title="嵌入式笔试问题汇总"><i data-svg-src="/zhb.gitee.io/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zhb.gitee.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95/">嵌入式笔试</a>,&nbsp;<a href="/zhb.gitee.io/tags/c%E8%AF%AD%E8%A8%80/">C语言</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zhb.gitee.io/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zhb.gitee.io/win10%E7%94%A8edge%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BAhts%E5%AE%89%E5%85%A8%E9%94%99%E8%AF%AF/" class="prev" rel="prev" title="win10下edge浏览器打开网页报错： 不是安全连接"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>win10下edge浏览器打开网页报错： 不是安全连接</a>
+            <a href="/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85%E8%A5%BF%E9%97%A8%E5%AD%90snap7%E5%BA%93/" class="next" rel="next" title="树莓派安装西门子snap7库">树莓派安装西门子snap7库<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by Bin | A Crazy Man</div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2000 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zhb.gitee.io/" target="_blank">BinByZhang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/zhb.gitee.io/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/zhb.gitee.io/lib/katex/katex.min.css"><script type="text/javascript" src="/zhb.gitee.io/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/katex.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/zhb.gitee.io/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOLVvab84CdYy9","darkTheme":"dark","emitMetadata":"0","inputPosition":"top","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"nano-oss/zhb.io","repoId":"R_kgDOLVvabw"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"7R13ZBU6BQ","algoliaIndex":"zhb.gitee.io","algoliaSearchKey":"abb3e8f6730db0b511261fc3a0f5e8d5","highlightTag":"em","maxResultLength":12,"noResultsFound":"没有找到结果","snippetLength":100,"type":"algolia"}};</script><script type="text/javascript" src="/zhb.gitee.io/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript" src="/js/custom.js"></script></body>
+</html>
+
+

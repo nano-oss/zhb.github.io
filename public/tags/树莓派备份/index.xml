@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>树莓派备份 - 标签 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A4%87%E4%BB%BD/</link>
+        <description>树莓派备份 - 标签 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Tue, 07 May 2024 15:59:12 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A4%87%E4%BB%BD/" rel="self" type="application/rss+xml" /><item>
+    <title>树莓派备份镜像极简操作版</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A4%87%E4%BB%BD%E9%95%9C%E5%83%8F%E6%9E%81%E7%AE%80%E6%93%8D%E4%BD%9C%E7%89%88/</link>
+    <pubDate>Tue, 07 May 2024 15:59:12 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A4%87%E4%BB%BD%E9%95%9C%E5%83%8F%E6%9E%81%E7%AE%80%E6%93%8D%E4%BD%9C%E7%89%88/</guid>
+    <description><![CDATA[操作步骤 搭建环境 (虚拟机系统第一次安装才需要，后面不需要这一步) 1 2 3 4 sudo apt update sudo apt upgrade sudo apt install git sudo git clone https://github.com/Drewsif/PiShrink.git 在vmware上设置虚拟机和本地电脑共享]]></description>
+</item>
+</channel>
+</rss>

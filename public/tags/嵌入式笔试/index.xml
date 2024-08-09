@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>嵌入式笔试 - 标签 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95/</link>
+        <description>嵌入式笔试 - 标签 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Sun, 03 Mar 2024 19:45:48 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95/" rel="self" type="application/rss+xml" /><item>
+    <title>嵌入式笔试问题汇总</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+    <pubDate>Sun, 03 Mar 2024 19:45:48 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+    <description><![CDATA[参考链接 引用 https://blog.csdn.net/yilongdashi/article/details/91352651 https://blog.csdn.net/zmlcool/article/details/6730973 https://blog.csdn.net/m0_75266675/article/details/134224558 https://blog.csdn.net/xianming_flag/article/details/110401128 https://blog.csdn.net/shaguahaha/article/details/70766665 https://blog.csdn.net/as480133937/article/details/105764119 https://blog.csdn.net/qq_45722156/article/details/116332826 https://zhuanlan.zhihu.com/p/162708070 https://blog.csdn.net/GG_Bruse/article/details/124360771 问题点记录 波特率115200每秒传多少字节 1GB=1024MB 1MB=1024KB 1KB=1024B（字节) 波特率115200 ＝ 115200 (位/秒) 如果没]]></description>
+</item>
+</channel>
+</rss>

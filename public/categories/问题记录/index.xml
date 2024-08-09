@@ -1,0 +1,88 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>问题记录 - 分类 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
+        <description>问题记录 - 分类 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Sun, 03 Mar 2024 12:58:50 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" rel="self" type="application/rss+xml" /><item>
+    <title>win10下edge浏览器打开网页报错： 不是安全连接</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/win10%E7%94%A8edge%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BAhts%E5%AE%89%E5%85%A8%E9%94%99%E8%AF%AF/</link>
+    <pubDate>Sun, 03 Mar 2024 12:58:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/win10%E7%94%A8edge%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BAhts%E5%AE%89%E5%85%A8%E9%94%99%E8%AF%AF/</guid>
+    <description><![CDATA[问题及解决 打开fontawesome.com时页面提示： 1 2 3 你的连接不是专用连接 NET::ERR_CERT_AUTHORITY_INVALID 你现在无法访问 fontawesome.com，因为网站使]]></description>
+</item>
+<item>
+    <title>win10下批量修改文件后缀</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/win10%E4%B8%8B%E6%89%B9%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/</link>
+    <pubDate>Tue, 20 Feb 2024 22:22:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/win10%E4%B8%8B%E6%89%B9%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/</guid>
+    <description><![CDATA[参考链接 引用 参考链接: https://zhuanlan.zhihu.com/p/649207787 操作步骤 在文件夹里面新建一个tx文本，点击打开txt文本，输入一小段代码： 1 ren *.txt *.md 以上代码意思就是将文件后缀名txt]]></description>
+</item>
+<item>
+    <title>win10下的WSL操作记录</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/win10%E4%B8%8B%E7%9A%84wsl%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
+    <pubDate>Tue, 06 Feb 2024 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/win10%E4%B8%8B%E7%9A%84wsl%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
+    <description><![CDATA[参考链接 引用 https://blog.csdn.net/weixin_43328157/article/details/129052041 https://learn.microsoft.com/zh-cn/windows/terminal/install https://learn.microsoft.com/zh-cn/windows/wsl/setup/environment#set-up-your-linux-username-and-password https://learn.microsoft.com/zh-cn/windows/wsl/install https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config wsl常用操作 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 wsl --update # 更新wsl内核 wsl --list --online # 更新wsl发行版列表 wsl --list --verbose # 列出已安装]]></description>
+</item>
+<item>
+    <title>诺基亚老人机忘记密码解决方法</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E8%AF%BA%E5%9F%BA%E4%BA%9A%E8%80%81%E4%BA%BA%E6%9C%BA%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+    <pubDate>Sat, 20 Jan 2024 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E8%AF%BA%E5%9F%BA%E4%BA%9A%E8%80%81%E4%BA%BA%E6%9C%BA%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+    <description><![CDATA[操作方法 硬格机：关机后重启手机后马上同时按住按住*号键、3号键、拨号键 且不能松开任何一个按键，直到屏幕出现NOKIA字母时才可以松开按键，否]]></description>
+</item>
+<item>
+    <title>树莓派centos找不到wlan0网卡解决方法</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BEcentos%E6%89%BE%E4%B8%8D%E5%88%B0wlan0%E7%BD%91%E5%8D%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+    <pubDate>Fri, 29 Dec 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BEcentos%E6%89%BE%E4%B8%8D%E5%88%B0wlan0%E7%BD%91%E5%8D%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+    <description><![CDATA[操作步骤 在以下路径：/usr/lib/firmwear/brcm/ 用一张新的内存卡烧录同样的镜像文件，插到树莓派运行 进入路径：/usr/li]]></description>
+</item>
+<item>
+    <title>win10查看连接过的wifi和密码</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/win10%E6%9F%A5%E7%9C%8B%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%9A%84wifi%E5%92%8C%E5%AF%86%E7%A0%81/</link>
+    <pubDate>Mon, 18 Dec 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/win10%E6%9F%A5%E7%9C%8B%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%9A%84wifi%E5%92%8C%E5%AF%86%E7%A0%81/</guid>
+    <description><![CDATA[常用操作 查看电脑连接过的WiFi密码： 使用win+r打开以管理员身份命令行 输入netsh wlan show profile name=&ldquo;WiFi名称&rdqu]]></description>
+</item>
+<item>
+    <title>ubuntu操作记录</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/ubuntu%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
+    <pubDate>Wed, 22 Nov 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/ubuntu%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
+    <description><![CDATA[问题及解决 修改/etc/sudoers文件发现显示/etc/sudoers is meant to be readonly的警告： 使用visudo指令修改： 1 sudo visudo v]]></description>
+</item>
+<item>
+    <title>nanopi使用ubuntu16.04无法更新系统问题</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/nanopi%E4%BD%BF%E7%94%A8ubuntu16.04%E6%97%A0%E6%B3%95%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E9%97%AE%E9%A2%98/</link>
+    <pubDate>Tue, 21 Nov 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/nanopi%E4%BD%BF%E7%94%A8ubuntu16.04%E6%97%A0%E6%B3%95%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E9%97%AE%E9%A2%98/</guid>
+    <description><![CDATA[摘要 引用 - nanopi使用ubuntu16.04无法更新系统问题 因为1604系统比较古老，要使用apt-get update确避免问题，直接用]]></description>
+</item>
+<item>
+    <title>树莓派操作指南3</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%973/</link>
+    <pubDate>Sun, 05 Nov 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%973/</guid>
+    <description><![CDATA[参考链接 引用 参考链接: https://blog.csdn.net/zhangjunhit/article/details/80569097# 相关问题点记录 树莓派配置远程桌面 实测vnc并不实用，所以这里采用新方法 参考链接：https://blog.csdn.]]></description>
+</item>
+<item>
+    <title>树莓派操作指南1</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%971/</link>
+    <pubDate>Sun, 20 Nov 2022 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%971/</guid>
+    <description><![CDATA[相关操作记录 树莓派卸载原生桌面： 1 2 3 4 5 sudo apt-get install deborphan sudo apt-get autoremove --purge libx11-.* lxde-.* raspberrypi-artwork xkb-data omxplayer penguinspuzzle sgml-base xml-core alsa-.* cifs-.* samba-.* fonts-.* desktop-* gnome-.* sudo apt-get autoremove --purge $(deborphan) sudo apt-get autoremove --purge sudo apt-get autoclean 树莓派换源： 仅需要打开/etc]]></description>
+</item>
+</channel>
+</rss>

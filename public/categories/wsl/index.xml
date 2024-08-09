@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Wsl - 分类 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/categories/wsl/</link>
+        <description>Wsl - 分类 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Tue, 06 Feb 2024 13:44:50 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/categories/wsl/" rel="self" type="application/rss+xml" /><item>
+    <title>win10下的WSL操作记录</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/win10%E4%B8%8B%E7%9A%84wsl%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
+    <pubDate>Tue, 06 Feb 2024 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/win10%E4%B8%8B%E7%9A%84wsl%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
+    <description><![CDATA[参考链接 引用 https://blog.csdn.net/weixin_43328157/article/details/129052041 https://learn.microsoft.com/zh-cn/windows/terminal/install https://learn.microsoft.com/zh-cn/windows/wsl/setup/environment#set-up-your-linux-username-and-password https://learn.microsoft.com/zh-cn/windows/wsl/install https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config wsl常用操作 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 wsl --update # 更新wsl内核 wsl --list --online # 更新wsl发行版列表 wsl --list --verbose # 列出已安装]]></description>
+</item>
+</channel>
+</rss>

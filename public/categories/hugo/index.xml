@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Hugo - 分类 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/categories/hugo/</link>
+        <description>Hugo - 分类 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Thu, 22 Feb 2024 13:44:50 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/categories/hugo/" rel="self" type="application/rss+xml" /><item>
+    <title>Hugo的Loveit主题配置搜索功能(基于algolia)</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/hugo%E7%9A%84loveit%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%9F%BA%E4%BA%8Ealgolia/</link>
+    <pubDate>Thu, 22 Feb 2024 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/hugo%E7%9A%84loveit%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%9F%BA%E4%BA%8Ealgolia/</guid>
+    <description><![CDATA[参考链接 引用 1. https://blog.csdn.net/m0_43457463/article/details/125708065# 2. https://github.com/algolia/cli?tab=readme-ov-file 3. https://www.algolia.com/doc/tools/cli/get-started/overview/ 4. https://zhuanlan.zhihu.com/p/642649638 5. https://hugoloveit.com/zh-cn/theme-documentation-basics/#5-%E6%90%9C%E7%B4%A2 6. https://hugoloveit.com/zh-cn/posts/ 操作步骤 将hugo.toml文件中配置为如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 [params.search] enable = true # 搜索引擎]]></description>
+</item>
+<item>
+    <title>Hugo搭建个人博客</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+    <pubDate>Tue, 20 Feb 2024 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+    <description><![CDATA[参考链接 引用 https://www.gohugo.org/ https://www.gohugo.org/doc/ https://themes.gohugo.io/themes/anatole/ https://github.com/lxndrblz/anatole/wiki/1%EF%B8%8F%E2%83%A3-Essential-Steps https://fontawesome.com/ https://smc.im/post/resolve-integrity-error-in-hugo/ https://markdown.com.cn/ (markdown语法教程) https://huweim.github.io/post/blog_hugo_%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E8%A7%84%E8%8C%83/ 常用操作记录 创建新文章 1 hugo new post/first.md 调试页面，修改完内容和配置后运行以下命令，会实时渲染 1]]></description>
+</item>
+</channel>
+</rss>

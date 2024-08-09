@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>香橙派 - 分类 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/categories/%E9%A6%99%E6%A9%99%E6%B4%BE/</link>
+        <description>香橙派 - 分类 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Mon, 30 Oct 2023 13:44:50 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/categories/%E9%A6%99%E6%A9%99%E6%B4%BE/" rel="self" type="application/rss+xml" /><item>
+    <title>香橙派驱动树莓派5-7寸触摸屏</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E9%A6%99%E6%A9%99%E6%B4%BE%E9%A9%B1%E5%8A%A8%E6%A0%91%E8%8E%93%E6%B4%BE5-7%E5%AF%B8%E8%A7%A6%E6%91%B8%E5%B1%8F/</link>
+    <pubDate>Mon, 30 Oct 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E9%A6%99%E6%A9%99%E6%B4%BE%E9%A9%B1%E5%8A%A8%E6%A0%91%E8%8E%93%E6%B4%BE5-7%E5%AF%B8%E8%A7%A6%E6%91%B8%E5%B1%8F/</guid>
+    <description><![CDATA[技巧 香橙派驱动树莓派5-7寸触摸屏 系统最好是ubuntu klipperscreen官方网址: https://klipperscreen.readthedocs.io/en/latest/ 操作步骤 正常安装klipper、fluid、m]]></description>
+</item>
+</channel>
+</rss>

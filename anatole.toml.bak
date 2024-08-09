@@ -1,0 +1,169 @@
+baseURL = 'https://naonano.gitee.io/zhb.gitee.io'
+# baseURL = 'https://nano-oss.github.io/zhb.io/'
+languageCode = 'zh-cn'
+title = "Bin's Blog"
+copyright = "2000-{{ YEAR }}"
+
+# 启用主题
+# theme = 'anatole'
+theme = 'LoveIt'
+
+[params]
+	# 主页个人信息设置
+	title = "Bin"
+	author = "Power by BinByZhang"	
+	description = "路漫漫其修远兮，吾将上下而求索！"
+	# profilePicture = "https://www.freeimg.cn/i/2024/02/09/65c5fa151a7c9.jpg"
+	profilePicture = "img/header.jpg"
+
+	# 关闭黑白主题切换
+	# disableThemeSwitcher = true
+	# displayMode = "dark"
+
+	# 设置排版比例，默认为0.6
+	contentratio = 0.7
+
+	# 打开文章后自动隐藏左边栏
+	# hidesidebar = true
+	reversepagetitle = true
+
+	# 首页显示内容，如设置为mainSections = ["post"]则显示发布文章
+	mainSections = []
+
+	readMore = true
+	fullPostContent = true
+
+	# 启用相关文章推荐
+	relatedPosts = true
+	numberOfRelatedPosts = 3
+
+	# 启用文章过旧提醒
+	oldContentWarning = true
+	oldContentDuration = 365
+
+
+
+[params.giscus]
+	enable = true
+    data-repo = "nano-oss/zhb.io"
+    data-repo-id = "R_kgDOLVvabw"
+    data-category = "Announcements"
+    data-category-id = "DIC_kwDOLVvab84CdYy9"
+    data-mapping = "pathname"
+    data-strict = "0"
+    data-reactions-enabled = "1"
+    data-emit-metadata = "0"
+    data-input-position = "top"
+    data-theme = "light"
+    data-lang = "zh-CN"
+    crossorigin = "anonymous"
+
+## 启用分类和标签
+[taxonomies]
+	category = 'categories'
+	tag = 'tags'
+
+## 相关文章推荐
+[related]
+	includeNewer = true
+	threshold = 80
+	toLower = true
+[[related.indices]]
+	name = 'keywords'
+	weight = 100
+[[related.indices]]
+	name = 'tags'
+	weight = 80
+
+[mermaid]
+	enable = true
+
+## Math settings
+[params.math]
+	enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
+	use = "katex"  # options: "katex", "mathjax". default is "katex".
+
+[params.assets]
+	disableFingerprinting = true
+
+## 社交图标设置，https://fontawesome.com/search
+[[params.socialIcons]]
+	icon = "fab fa-weixin"
+	title = "微信"
+	# url = "https://www.freeimg.cn/i/2024/02/19/65d2deb002c86.jpg"
+	url = "img/wx.jpg"
+
+[[params.socialIcons]]
+	icon = "fab fa-bilibili"
+	title = "B站"
+	url = "https://space.bilibili.com/1617463074"
+
+[[params.socialIcons]]
+	icon = "fab fa-github"
+	title = "Gitee"
+	url = "https://gitee.com/naonano"
+
+[[params.socialIcons]]
+	icon = "fas fa-envelope"
+	title = "邮箱"
+	# url = "https://www.freeimg.cn/i/2024/02/19/65d354a0928a1.png"
+	url = "img/email.png"
+
+[[params.socialIcons]]
+	icon = "fab fa-zhihu"
+	title = "知乎"
+	url = "https://www.zhihu.com/people/double-n-86"	
+
+[[params.socialIcons]]
+	icon = "fab fa-squarespace"
+	title = "微信公众号"
+	# url = "https://www.freeimg.cn/i/2024/02/20/65d42eb16c8cb.jpg"
+	url = "img/wxmp.jpg"
+
+## 主页菜单设置
+[menu]
+
+	[[menu.main]]
+	name = "首页"
+	identifier = "home"
+	weight = 150
+	url = "/"
+
+	[[menu.main]]
+	name = "全部文章-时间线"
+	weight = 250
+	identifier = "posts"
+	url = "/post/"
+
+	[[menu.main]]
+	name = "文章分类"
+	weight = 350
+	identifier = "categories"
+	url = "/categories/"
+
+	[[menu.main]]
+	name = "文章标签"
+	weight = 450
+	identifier = "tags"
+	url = "/tags/"
+
+	[[menu.main]]
+	name = "文件分享"
+	weight = 550
+	identifier = "download"
+	url = "/download/"
+
+	[[menu.main]]
+	name = "个人简历"
+	weight = 650
+	identifier = "self"
+	url = "/self/"
+
+	[[menu.main]]
+	name = "关于"
+	weight = 750
+	identifier = "about"
+	url = "/about/"
+
+
+

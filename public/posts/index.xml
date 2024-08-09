@@ -1,0 +1,88 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>所有文章 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/posts/</link>
+        <description>所有文章 | Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Tue, 07 May 2024 15:59:12 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>树莓派备份镜像极简操作版</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A4%87%E4%BB%BD%E9%95%9C%E5%83%8F%E6%9E%81%E7%AE%80%E6%93%8D%E4%BD%9C%E7%89%88/</link>
+    <pubDate>Tue, 07 May 2024 15:59:12 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A4%87%E4%BB%BD%E9%95%9C%E5%83%8F%E6%9E%81%E7%AE%80%E6%93%8D%E4%BD%9C%E7%89%88/</guid>
+    <description><![CDATA[操作步骤 搭建环境 (虚拟机系统第一次安装才需要，后面不需要这一步) 1 2 3 4 sudo apt update sudo apt upgrade sudo apt install git sudo git clone https://github.com/Drewsif/PiShrink.git 在vmware上设置虚拟机和本地电脑共享]]></description>
+</item>
+<item>
+    <title>玩客云刷Armbian安装klipper</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7armbian%E5%AE%89%E8%A3%85klipper/</link>
+    <pubDate>Fri, 19 Apr 2024 15:29:32 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7armbian%E5%AE%89%E8%A3%85klipper/</guid>
+    <description><![CDATA[参考链接 引用 http://mirrors.aliyun.com/debian/dists/?spm=a2c6h.25603864.0.0.142f29e8Iss3Uu https://blog.csdn.net/jamesdodo/article/details/106073576 资料下载 先点击下面链接，下载好镜像文件和工具备用，需要公对公的usb数据线，8G或以上的u盘 1 2 3 玩客云Armbian_20]]></description>
+</item>
+<item>
+    <title>Klipper安装0.96OLED屏幕</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/klipper%E5%AE%89%E8%A3%850.96oled%E5%B1%8F%E5%B9%95/</link>
+    <pubDate>Mon, 01 Apr 2024 15:17:01 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/klipper%E5%AE%89%E8%A3%850.96oled%E5%B1%8F%E5%B9%95/</guid>
+    <description><![CDATA[前言 摘要 新组装的打印机可以通过局域网内浏览器进行控制打印， 但还是需要一块小屏幕展示打印进度，才不用每次都打开手机或者电脑才能查看。 之前用mk]]></description>
+</item>
+<item>
+    <title>Klipper配置网床补偿实现完美首层打印</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/klipper%E9%85%8D%E7%BD%AE%E7%BD%91%E5%BA%8A%E8%A1%A5%E5%81%BF%E5%AE%9E%E7%8E%B0%E5%AE%8C%E7%BE%8E%E9%A6%96%E5%B1%82%E6%89%93%E5%8D%B0/</link>
+    <pubDate>Thu, 28 Mar 2024 17:43:39 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/klipper%E9%85%8D%E7%BD%AE%E7%BD%91%E5%BA%8A%E8%A1%A5%E5%81%BF%E5%AE%9E%E7%8E%B0%E5%AE%8C%E7%BE%8E%E9%A6%96%E5%B1%82%E6%89%93%E5%8D%B0/</guid>
+    <description><![CDATA[参考链接 引用 本文主要针对没有配置自动调平工具的3d打印机，配置网床补偿以达到完美打印首层的目的 https://www.bilibili.com/video/BV1ao4y1j7uy 参考视频来自B站up主： 三十而肥2017 操作]]></description>
+</item>
+<item>
+    <title>创想三维ender刷klipper下位机</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/</link>
+    <pubDate>Wed, 27 Mar 2024 20:55:11 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B4ender%E5%88%B7klipper%E4%B8%8B%E4%BD%8D%E6%9C%BA/</guid>
+    <description><![CDATA[参考链接 引用 本文主要针对创想三维的ender3-v2-2020机型，主板型号4.4.2，主控GD32F303 其他ender3的型号可以参照以]]></description>
+</item>
+<item>
+    <title>STM32F103点灯</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/stm32f103%E7%82%B9%E7%81%AF/</link>
+    <pubDate>Tue, 05 Mar 2024 15:57:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/stm32f103%E7%82%B9%E7%81%AF/</guid>
+    <description><![CDATA[参考链接 引用 https://blog.csdn.net/qq_41806966/article/details/126894938 疑难杂症记录 STM32F103最小系统板驱动硬件spi的lcd屏幕时，每次都需要用手按一下复位才可以显示？很疑惑 解决方法： 重新]]></description>
+</item>
+<item>
+    <title>树莓派安装西门子snap7库</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85%E8%A5%BF%E9%97%A8%E5%AD%90snap7%E5%BA%93/</link>
+    <pubDate>Mon, 04 Mar 2024 22:48:56 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85%E8%A5%BF%E9%97%A8%E5%AD%90snap7%E5%BA%93/</guid>
+    <description><![CDATA[参考链接 引用 https://blog.csdn.net/zncg24/article/details/135693776 操作步骤 下载这个压缩包放到树莓派上： 1 https://sourceforge.net/projects/snap7/files/Snap7-IoT/snap7-iot-arm/ 在树莓派上执行： 1 2 3 tar -xvzf snap7-iot-arm-1.4.2.tar.gz cd snap7-iot-arm-1.4.2/build/unix sudo make -f arm_v7_x64_linux.mk install 编译成功，实测可以引用成功libsnap7.]]></description>
+</item>
+<item>
+    <title>嵌入式笔试问题汇总</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+    <pubDate>Sun, 03 Mar 2024 19:45:48 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+    <description><![CDATA[参考链接 引用 https://blog.csdn.net/yilongdashi/article/details/91352651 https://blog.csdn.net/zmlcool/article/details/6730973 https://blog.csdn.net/m0_75266675/article/details/134224558 https://blog.csdn.net/xianming_flag/article/details/110401128 https://blog.csdn.net/shaguahaha/article/details/70766665 https://blog.csdn.net/as480133937/article/details/105764119 https://blog.csdn.net/qq_45722156/article/details/116332826 https://zhuanlan.zhihu.com/p/162708070 https://blog.csdn.net/GG_Bruse/article/details/124360771 问题点记录 波特率115200每秒传多少字节 1GB=1024MB 1MB=1024KB 1KB=1024B（字节) 波特率115200 ＝ 115200 (位/秒) 如果没]]></description>
+</item>
+<item>
+    <title>win10下edge浏览器打开网页报错： 不是安全连接</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/win10%E7%94%A8edge%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BAhts%E5%AE%89%E5%85%A8%E9%94%99%E8%AF%AF/</link>
+    <pubDate>Sun, 03 Mar 2024 12:58:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/win10%E7%94%A8edge%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BAhts%E5%AE%89%E5%85%A8%E9%94%99%E8%AF%AF/</guid>
+    <description><![CDATA[问题及解决 打开fontawesome.com时页面提示： 1 2 3 你的连接不是专用连接 NET::ERR_CERT_AUTHORITY_INVALID 你现在无法访问 fontawesome.com，因为网站使]]></description>
+</item>
+<item>
+    <title>树莓派fswebcam命令行控制usb摄像头拍照</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BEfswebcam%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6usb%E6%91%84%E5%83%8F%E5%A4%B4%E6%8B%8D%E7%85%A7/</link>
+    <pubDate>Fri, 01 Mar 2024 15:58:26 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/%E6%A0%91%E8%8E%93%E6%B4%BEfswebcam%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6usb%E6%91%84%E5%83%8F%E5%A4%B4%E6%8B%8D%E7%85%A7/</guid>
+    <description><![CDATA[参考链接 引用 https://blog.csdn.net/weixin_42361175/article/details/117011888# 操作步骤 1 2 3 4 5 6 7 8 9 10 sudo apt update sudo apt upgrade sudo apt-get install fswebcam sudo fswebcam -r 720x640 --jpeg 85 -D 1 web-cam-shot.jpg sudo fswebcam -d /dev/video2 --no-banner -r 1280x720 test/test.jpg 或 sudo fswebcam -d /dev/video0 -r 720x640 --jpeg 85 -D 1 web-cam-shot.jpg -d代表指定哪个设备]]></description>
+</item>
+</channel>
+</rss>

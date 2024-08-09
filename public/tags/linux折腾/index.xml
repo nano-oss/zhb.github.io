@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Linux折腾 - 标签 - Bin&#39;s Blog</title>
+        <link>https://naonano.gitee.io/zhb.gitee.io/tags/linux%E6%8A%98%E8%85%BE/</link>
+        <description>Linux折腾 - 标签 - Bin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2231637869@qq.com (BinByZhang)</managingEditor>
+            <webMaster>2231637869@qq.com (BinByZhang)</webMaster><copyright>本文作者：Bin ，转载须获得作者授权，如有侵权请联系修改</copyright><lastBuildDate>Mon, 20 Nov 2023 13:44:50 &#43;0800</lastBuildDate><atom:link href="https://naonano.gitee.io/zhb.gitee.io/tags/linux%E6%8A%98%E8%85%BE/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux系统搭建v2ray-v2ray2a记录</title>
+    <link>https://naonano.gitee.io/zhb.gitee.io/linux%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BAv2ray-v2ray2a%E8%AE%B0%E5%BD%95/</link>
+    <pubDate>Mon, 20 Nov 2023 13:44:50 &#43;0800</pubDate>
+    <author>Bin</author>
+    <guid>https://naonano.gitee.io/zhb.gitee.io/linux%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BAv2ray-v2ray2a%E8%AE%B0%E5%BD%95/</guid>
+    <description><![CDATA[摘要 引用 通用于ubuntu-debian-raspibian等Linux系统，amd64-arm64(aarch64)-armhf(armv]]></description>
+</item>
+</channel>
+</rss>
